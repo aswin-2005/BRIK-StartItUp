@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './nav';
 import Hero from './hero';
-import WhatAwaits from './WhatAwaits';
+import WhatAwaits from './what-awaits';
 
 function App() {
   return (
