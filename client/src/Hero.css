@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'FuturaExtraBold';
-  src: url('/assets/Futura Extra Bold.otf') format('opentype');
+  src: url('./assets/Futura-Extra-Bold.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
 }

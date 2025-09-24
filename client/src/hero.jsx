@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import bulbGif from "./assets\bulb-gif.gif";
+import bulbGif from "./assets/bulb-gif.gif";
 
 function Hero() {
   return (
@@ -8,7 +8,7 @@ function Hero() {
       <div className="hero-container">
         <div className="hero-left">
           <img
-            src="/assets/abstract rings.png"
+            src={require("./assets/abstract rings.png")}
             alt="Hero"
             className="hero-img"
           />
@@ -23,7 +23,7 @@ function Hero() {
         <div className="hero-timeline">
           <span>8 weeks idea</span>
           <img
-            src="/assets/Right Arrow.png"
+            src={require("./assets/Right Arrow.png")}
             alt="arrow"
             className="timeline-arrow"
           />

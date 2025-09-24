@@ -14,9 +14,9 @@ export default function Nav() {
 
         {/* Center logo + subtext */}
         <div className="nav-logo">
-          <img src="/assets\start-it-up logo.png" alt="Main Logo" className="logo" />
+          <img src={require("./assets/start-it-up logo.png")} alt="Main Logo" className="logo" />
           <div className="subtext">
-            by <img src="/assets\BRIK logo.png" alt="Brik Logo" className="brik-logo" />
+            by <img src={require("./assets/BRIK logo.png")} alt="Brik Logo" className="brik-logo" />
           </div>
         </div>
 
