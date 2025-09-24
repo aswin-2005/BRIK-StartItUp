@@ -1,0 +1,264 @@
+.footer {
+  background-color: #2966eb;
+  color: white;
+  padding: 80px 60px;
+  min-height: 400px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Left Section - Logo and Quick Links */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex: 0 0 45%;
+  padding-right: 40px;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main-logo {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+.quick-links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+/* Right Section - BRIK and Contact */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex: 0 0 45%;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.brik-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.initiative-text {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 22px;
+  color: white;
+  text-align: right;
+  margin: 0;
+  font-weight: 400;
+}
+
+.brik-text {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-align: right;
+  margin: 0;
+  line-height: 1;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.section-title {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+  margin: 0;
+  text-align: right;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.contact-item {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: right;
+  margin: 0;
+  font-weight: 400;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.footer-link {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-align: left;
+  font-weight: 400;
+}
+
+.footer-link:hover {
+  color: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 60px 40px;
+  }
+
+  .footer-container {
+    max-width: 1000px;
+  }
+
+  .main-logo {
+    height: 120px;
+  }
+
+  .brik-text {
+    font-size: 42px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .footer-link,
+  .contact-item {
+    font-size: 18px;
+  }
+
+  .initiative-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 30px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .footer-left {
+    align-items: center;
+    text-align: center;
+    flex: none;
+    padding-right: 0;
+  }
+
+  .footer-right {
+    align-items: center;
+    text-align: center;
+    flex: none;
+  }
+
+  .brik-section {
+    align-items: center;
+  }
+
+  .contact-section {
+    align-items: center;
+  }
+
+  .contact-details {
+    align-items: center;
+  }
+
+  .footer-nav {
+    align-items: center;
+  }
+
+  .main-logo {
+    height: 100px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+
+  .contact-item {
+    font-size: 16px;
+  }
+
+  .initiative-text {
+    font-size: 18px;
+  }
+
+  .brik-text {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-container {
+    gap: 40px;
+  }
+
+  .main-logo {
+    height: 80px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .contact-item {
+    font-size: 14px;
+  }
+
+  .initiative-text {
+    font-size: 16px;
+  }
+
+  .brik-text {
+    font-size: 32px;
+  }
+}

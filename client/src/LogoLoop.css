@@ -1,0 +1,92 @@
+.logo-loop {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: var(--logo-height, 120px);
+  display: flex;
+  align-items: center;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  user-select: none;
+}
+
+.logo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-item img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Scale on hover effect */
+.logo-loop.scale-hover .logo-item:hover {
+  transform: scale(1.1);
+}
+
+/* Fade out edges */
+.logo-loop.fade-out::before,
+.logo-loop.fade-out::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.logo-loop.fade-out::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--fade-color, #ffffff) 0%,
+    transparent 100%
+  );
+}
+
+.logo-loop.fade-out::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--fade-color, #ffffff) 0%,
+    transparent 100%
+  );
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-loop.fade-out::before,
+  .logo-loop.fade-out::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-loop.fade-out::before,
+  .logo-loop.fade-out::after {
+    width: 30px;
+  }
+}
+
+/* Smooth animation */
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none !important;
+  }
+  
+  .logo-item {
+    transition: none !important;
+  }
+}
