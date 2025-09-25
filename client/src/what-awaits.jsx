@@ -220,7 +220,7 @@ const Paragraph = styled.p`
     font-weight: bold;
     color: #2165caff;
     text-align: center;
-    padding: 100px 80px;
+    padding: 80px 80px;
 
     @media (max-width: 768px) {
         font-size: 24px;

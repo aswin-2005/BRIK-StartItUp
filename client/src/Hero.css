@@ -152,13 +152,13 @@
   }
   .hero-gif {
     position: absolute;
-    left: 20%;       
-    bottom: 5%;      
-    transform: translateX(-50%); 
-  }
+    left: 27%;
+    bottom: -22%;
+    transform: translateX(-50%);
+}
   
   .hero-gif img {
-    max-width: 250px;   
+    max-width: 36rem;   
     height: auto;
   }
   
