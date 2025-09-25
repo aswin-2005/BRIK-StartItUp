@@ -30,7 +30,7 @@
 }
 
 .main-logo {
-  height: 140px;
+  height: 250px;
   width: auto;
   object-fit: contain;
 }
@@ -61,7 +61,7 @@
 }
 
 .initiative-text {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-size: 22px;
   color: white;
   text-align: right;
@@ -70,7 +70,7 @@
 }
 
 .brik-text {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-size: 48px;
   font-weight: bold;
   color: white;
@@ -87,7 +87,7 @@
 }
 
 .section-title {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-weight: bold;
   font-size: 28px;
   color: white;
@@ -103,7 +103,7 @@
 }
 
 .contact-item {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-size: 20px;
   color: white;
   text-align: right;
@@ -119,7 +119,7 @@
 }
 
 .footer-link {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-size: 20px;
   color: white;
   text-decoration: none;
