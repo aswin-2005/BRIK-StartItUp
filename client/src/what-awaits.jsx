@@ -215,20 +215,21 @@ const CardText = styled.p`
 `;
 
 const Paragraph = styled.p`
-    font-size: 26px;
+    font-size: 36px;
     font-family: 'Helvetica', sans-serif;
     font-weight: bold;
     color: #2165caff;
     text-align: center;
-    padding: 40px 80px;
+    padding: 100px 80px;
 
     @media (max-width: 768px) {
         font-size: 24px;
+        padding: 30px 40px;
     }
 
-    @media (max-width: 768px) {
-        padding: 30px 40px;
+    @media (max-width: 480px) {
         font-size: 18px;
+        padding: 20px 20px;
     }
 `;
 
