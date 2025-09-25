@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import startItUpLogo from './assets/start-it-up logo.png';
+import startItUpLogo from './assets/start-it-up logo-1.png';
 
 const Footer = () => {
   const footerLinks = [
