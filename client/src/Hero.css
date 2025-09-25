@@ -1,164 +1,183 @@
 @font-face {
-    font-family: 'FuturaExtraBold';
-    src: url('./assets/fonts/Futura Extra Bold.otf') format('opentype');
-    font-weight: 800;
-    font-style: normal;
-  }
-  
-  .hero {
-    background-color: white;
-    width: 100%;
-    min-height: calc(100vh - 90px); /* full screen minus nav */
-    display: flex;
-    align-items: center;
-  }
-  
+  font-family: "FuturaExtraBold";
+  src: url("./assets/fonts/Futura Extra Bold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+.hero {
+  background-color: white;
+  width: 100%;
+  min-height: calc(100vh - 90px); /* full screen minus nav */
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* left | right */
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+}
+
+/* Left side: image */
+.hero-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+.hero-center {
+  position: absolute;
+  top: 65%; /* move higher */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  top: 50vh;
+  left: 40vw;
+}
+
+.hero-subpart {
+  display: flex;
+}
+
+.hero-word {
+  font-family: "FuturaExtraBold", Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 150px;
+  margin: 0;
+  color: #111;
+  display: block;
+}
+
+/* Start */
+.hero-word.start {
+  transform: rotate(-3.8deg);
+  position: absolute;
+  top: -200px;
+}
+
+.hero-word.it {
+  transform: rotate(7.6deg);
+  margin-top: -4rem;
+  margin-left: 100px;
+  position: absolute;
+  left: -80px;
+}
+
+.hero-word.up {
+  transform: rotate(-6.84deg);
+  /* margin-left: 40px;    align 'Up' more directly under Start */
+  margin-top: 20px; /* keep it lifted up */
+  position: absolute;
+  top: -90px;
+  left: 200px;
+}
+.hero-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* start from center */
+  margin-top: 150px; /* space below Start/It/Up */
+  gap: 1.5rem; /* space between items */
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #111;
+}
+
+.timeline-arrow {
+  width: 40px; /* adjust size */
+  height: auto;
+}
+.hero-actions {
+  position: absolute;
+  right: 11%;
+  bottom: 9%;
+  display: flex;
+  gap: 3rem;
+}
+
+/* Know More button */
+.know-btn {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111; /* black text */
+  background-color: #fff; /* white bg */
+  border: 3px solid #000; /* thick black border */
+  padding: 0.6rem 1.8rem; /* same sizing */
+  border-radius: 999px; /* oval/pill shape */
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.know-btn:hover {
+  background-color: #f4f4f4; /* subtle grey hover */
+  transform: scale(1.05);
+}
+.hero-image-right {
+  position: absolute;
+  left: 68rem;
+  top: 57%;
+}
+.hero-image-right img {
+  max-width: 25rem;
+  height: auto;
+  transform: translateX(10%); /* move 10% further right */
+}
+
+.hero-lines {
+  position: absolute;
+  top: 26%; /* vertical position → move up/down */
+  left: 72%; /* horizontal position → move slightly right from center */
+  transform: translate(-50%, -50%); /* keep centering balanced */
+}
+
+.promotion-img {
+  max-width: 400px; /* adjust size */
+  height: auto;
+}
+.hero-gif {
+  position: absolute;
+  left: 27%;
+  bottom: -22%;
+  transform: translateX(-50%);
+}
+
+.hero-gif img {
+  max-width: 36rem;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
   .hero-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* left | right */
-    align-items: center;
-    gap: 2rem;
-    padding: 0;
-  }
-  
-  /* Left side: image */
-  .hero-left {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .hero-img {
-    max-width: 80%;
-    height: auto;
-    object-fit: contain;
-  }
-  .hero-center {
-    position: absolute;
-    top: 65%;   /* move higher */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    top: 50vh;
-    left: 40vw;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
   }
 
-  .hero-subpart {
-    display: flex;  
-  } 
-  
-  
-  .hero-word {
-    font-family: 'FuturaExtraBold', Helvetica, sans-serif;
-    font-weight: 800;
-    font-size: 150px;
-    margin: 0;
-    color: #111;
-    display: block;
-
-  }
-  
-  /* Start */
-  .hero-word.start {
-    transform: rotate(-3.8deg);
-    position: absolute;
-    top: -200px;
-  }
-  
-  .hero-word.it
-  {
-     transform: rotate(7.6deg);
-     margin-top: -4rem;
-     margin-left: 100px;
-     position: absolute;
-     left: -80px;
- }
-  
-  .hero-word.up {
-    transform: rotate(-6.84deg);
-    /* margin-left: 40px;    align 'Up' more directly under Start */
-    margin-top: 20px;   /* keep it lifted up */
-    position: absolute;
-    top: -90px;
-    left: 200px;
-  }
-  .hero-timeline {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* start from center */
-    margin-top: 150px; /* space below Start/It/Up */
-    gap: 1.5rem; /* space between items */
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    color: #111;
-  }
-  
-  .timeline-arrow {
-    width: 40px;  /* adjust size */
-    height: auto;
-  }
-  .hero-actions {
-    position: absolute;
-    right: 11%;
-    bottom: 9%;
-    display: flex
-;
-    gap: 3rem;
-}
-  
-  
-  /* Know More button */
-  .know-btn {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: #111;                 /* black text */
-    background-color: #fff;      /* white bg */
-    border: 3px solid #000;      /* thick black border */
-    padding: 0.6rem 1.8rem;      /* same sizing */
-    border-radius: 999px;        /* oval/pill shape */
-    cursor: pointer;
-    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
-  }
-  
-  .know-btn:hover {
-    background-color: #f4f4f4; /* subtle grey hover */
-    transform: scale(1.05);
-  }
+  .hero-left,
+  .hero-center,
   .hero-image-right {
-    position: absolute;
-    left: 68rem;
-    top: 57%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-word {
+    font-size: clamp(40px, 10vw, 120px);
+  }
+
+  .hero-timeline {
+    font-size: clamp(14px, 3vw, 28px);
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
-  .hero-image-right img {
-    max-width: 25rem;
-    height: auto;
-    transform: translateX(10%);  /* move 10% further right */
-  }
-  
-  .hero-lines {
-    position: absolute;
-    top: 30%;      /* vertical position → move up/down */
-    left: 70%;     /* horizontal position → move slightly right from center */
-    transform: translate(-50%, -50%); /* keep centering balanced */
-  }
-  
-  .promotion-img {
-    max-width: 400px;   /* adjust size */
-    height: auto;
-  }
-  .hero-gif {
-    position: absolute;
-    left: 27%;
-    bottom: -22%;
-    transform: translateX(-50%);
-}
-  
-  .hero-gif img {
-    max-width: 36rem;   
-    height: auto;
-  }
-  
