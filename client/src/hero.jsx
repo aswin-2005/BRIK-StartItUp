@@ -44,7 +44,7 @@ function Hero() {
 
         <div className="hero-actions">
           <button className="know-btn">Know More</button>
-          <button className="apply-btn">Apply Now</button>
+          <button onClick={() => window.location.href = "https://app.makemypass.com/event/start-it-up"} className="apply-btn">Apply Now</button>
         </div>
 
         <div className="hero-image-right">
