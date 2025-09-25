@@ -1,5 +1,7 @@
 import React from 'react';
 import './WhoFuelsUs.css';
+import styled from 'styled-components';
+import keyframes from 'styled-components';
 import LogoLoop from './LogoLoop';
 import notionLogo from './assets/notion.png';
 import hubspotLogo from './assets/hubspot.png';
@@ -15,6 +17,45 @@ import mecLogo from './assets/College IEDCs/mec logo.png';
 import novaLogo from './assets/College IEDCs/nova logo.jpg';
 import officialLogo from './assets/College IEDCs/Official logo.png';
 import tdfggchLogo from './assets/College IEDCs/tdfggch.png';
+
+const popIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+`;
+
+const Title = styled.h2`
+  font-size: 62px;
+  font-family: 'Futura Extra Bold', sans-serif;
+  color: white;
+  margin-bottom: 70px;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2165caff;
+  animation: ${popIn} 0.8s ease-out both;
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+`;
+
+const TiltWord = styled.span`
+  display: inline-block;
+  transform: rotate(${props => props.rotate}deg);
+`;
 
 const WhoFuelsUs = () => {
   const partnerLogos = [
@@ -96,14 +137,16 @@ const WhoFuelsUs = () => {
   ];
 
   return (
-    <section className="who-fuels-us">
+    <section className="who-fuels-us" id='partners'>
       <div className="who-fuels-us-container">
         {/* Main Title */}
-        <div className="main-title">
-          <span className="title-word who">Who</span>
-          <span className="title-word fuels">Fuels</span>
-          <span className="title-word us">Us?</span>
+        <Title>
+        <div style={{ display: 'flex', gap: '12px' }}>
+            <TiltWord rotate={-2}>Who</TiltWord>
+            <TiltWord rotate={5}>Fuels</TiltWord>
         </div>
+        <TiltWord rotate={-4}>Us?</TiltWord>
+      </Title>
 
         {/* Partner Categories */}
         <div className="partner-categories">
