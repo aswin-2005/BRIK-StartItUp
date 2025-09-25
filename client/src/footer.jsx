@@ -6,7 +6,7 @@ const Footer = () => {
   const footerLinks = [
     { label: "About", href: "#about" },
     { label: "Partners", href: "#partners" },
-    { label: "Apply Now", href: "#apply" }
+    { label: "Apply Now", href: "https://app.makemypass.com/event/start-it-up" }
   ];
 
   return (
