@@ -20,8 +20,10 @@ function Hero() {
 
         <div className="hero-center">
           <h1 className="hero-word start">Start</h1>
+          <div className="hero-subpart">
           <h1 className="hero-word it">It</h1>
           <h1 className="hero-word up">Up</h1>
+          </div>
         </div>
 
         <div className="hero-timeline">
