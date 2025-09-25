@@ -1,51 +1,65 @@
-import React from 'react';
-import './Footer.css';
-import startItUpLogo from './assets/start-it-up logo-1.png';
+import React from "react";
+import "./Footer.css";
+import startItUpLogo from "./assets/start-it-up logo-1.png";
 
 const Footer = () => {
-  const footerLinks = [
-    { label: "About", href: "#about" },
-    { label: "Partners", href: "#partners" },
-    { label: "Apply Now", href: "https://app.makemypass.com/event/start-it-up" }
-  ];
-
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Left Section - START IT UP Logo and Quick Links */}
-        <div className="footer-left">
-          <div className="logo-section">
-            <img src={startItUpLogo} alt="Start It Up Logo" className="main-logo" />
-          </div>
-          <div className="quick-links-section">
-            <h3 className="section-title">Quick Links</h3>
-            <nav className="footer-nav">
-              {footerLinks.map((link, index) => (
-                <a 
-                  key={index} 
-                  href={link.href} 
-                  className="footer-link"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
+    <footer className="bg-blue-600 text-white py-12 px-8 font-helvetica">
+      <div className="max-w-6xl mx-auto">
+        {/* Top section with logo and initiative text */}
+        <div className="flex justify-between items-start mb-12">
+          <img src={startItUpLogo} alt="startitup logo" />
+          <div className="text-right">
+            <div className="text-lg mb-2">An Initiative By</div>
+            <div className="text-4xl font-bold">BRIK</div>
           </div>
         </div>
 
-        {/* Right Section - BRIK Initiative and Contact */}
-        <div className="footer-right">
-          <div className="brik-section">
-            <div className="initiative-text">An Initiative By</div>
-            <div className="brik-text">BRIK</div>
+        {/* Main content section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Quick Links */}
+          <div className="flex flex-col items-start">
+            <h3 className="text-4xl font-extrabold tracking-tight mb-10">
+              Quick Links
+            </h3>
+            <nav className="space-y-4 text-left">
+              <div>
+                <a href="#" className="text-xl  hover:underline">
+                  About
+                </a>
+              </div>
+              <div>
+                <a href="#" className="text-xl  hover:underline">
+                  Partners
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://app.makemypass.com/event/start-it-up"
+                  className="text-xl  hover:underline"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </nav>
           </div>
-          <div className="contact-section">
-            <h3 className="section-title">Contact</h3>
-            <div className="contact-details">
-              <div className="contact-item">BRIK COMMUNITY</div>
-              <div className="contact-item">Kerala, India</div>
-              <div className="contact-item">Email: brikcommunity@gmail.com</div>
-              <div className="contact-item">Phone/WhatsApp: +91-9961020050</div>
+
+          {/* Contact Section (Right Aligned) */}
+          <div className="flex flex-col items-end">
+            <h3 className="text-4xl font-extrabold tracking-tight mb-8">
+              Contact
+            </h3>
+            <div className="flex flex-col items-end gap-1 text-lg text-right">
+              <p>BRIK COMMUNITY</p>
+              <p>Kerala, India</p>
+              <p>
+                <strong className="font-bold">Email:</strong>{" "}
+                brikcommunity@gmail.com
+              </p>
+              <p>
+                <strong className="font-bold">Phone/WhatsApp:</strong>{" "}
+                +91-9961020050
+              </p>
             </div>
           </div>
         </div>
