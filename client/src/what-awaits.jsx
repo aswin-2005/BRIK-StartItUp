@@ -269,7 +269,7 @@ const WhatAwaits = () => {
 
   return (
     <>
-    <Section ref={sectionRef}>
+    <Section ref={sectionRef} id='about'>
       <Title>
         <div style={{ display: 'flex', gap: '12px' }}>
             <TiltWord rotate={-2}>What</TiltWord>
