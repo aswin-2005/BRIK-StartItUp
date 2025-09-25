@@ -12,7 +12,7 @@
 
 .bWPhzn {
   font-size: 2.5rem;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-weight: bold;
   color: #2165caff;
   text-align: center;
@@ -21,7 +21,7 @@
 
 .main-title {
   font-size: 2.5rem;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-weight: bold;
   color: #2165caff;
   text-align: center;
@@ -35,7 +35,7 @@
 }
 
 .title-word {
-  font-family: 'FuturaExtraBold', Helvetica, sans-serif;
+  font-family: "FuturaExtraBold", Helvetica, sans-serif;
   font-weight: 800;
   font-size: 80px;
   color: #2966eb;
@@ -71,7 +71,7 @@
 }
 
 .category-title {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-weight: bold;
   font-size: 40px;
   color: #181818;
@@ -94,7 +94,7 @@
 }
 
 .partner-name {
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
   font-size: 24px;
   color: #181818;
   font-weight: 500;
@@ -131,18 +131,15 @@
 
 /* IEDC Logo Loop Styling */
 
-
 .iedc-logo-loop .logo-item {
-    display: flex
-;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    transition: all 0.3s 
-ease;
-    min-height: 10rem;
-    min-width: 10rem;
-    max-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  min-height: 10rem;
+  min-width: 10rem;
+  max-width: 250px;
 }
 
 .iedc-logo-loop .logo-item:hover {
@@ -158,81 +155,24 @@ ease;
   border-radius: 8px;
 }
 
-/* Responsive Design */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .who-fuels-us {
     padding: 60px 16px;
   }
 
-  .title-word {
-    font-size: 60px;
-  }
-
-  .main-title {
-    gap: 15px;
-    margin-bottom: 60px;
-  }
-
   .partner-categories {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 60px;
+    gap: 35px;
+    margin-bottom: 50px;
   }
 
   .category-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .partner-logo {
-    max-width: 250px;
-  }
-
-  .partner-name {
-    font-size: 20px;
-  }
-
-  .iedc-scroll-container {
-    height: 140px;
-  }
-
-  .iedc-logo-loop .logo-item {
-    padding: 16px;
-    min-height: 100px;
-    min-width: 180px;
-    max-width: 220px;
-  }
-  
-  .iedc-logo-loop .logo-item img {
-    max-height: 70px;
-  }
-
-}
-
-@media (max-width: 480px) {
-  .who-fuels-us {
-    padding: 40px 12px;
-  }
-
-  .title-word {
-    font-size: 48px;
-  }
-
-  .main-title {
-    gap: 10px;
-    margin-bottom: 40px;
-  }
-
-  .partner-categories {
-    gap: 30px;
-    margin-bottom: 40px;
-  }
-
-  .category-title {
-    font-size: 28px;
-  }
-
-  .partner-logo {
-    max-width: 200px;
+    max-width: 180px;
   }
 
   .partner-name {
@@ -244,13 +184,69 @@ ease;
   }
 
   .iedc-logo-loop .logo-item {
-    padding: 12px;
-    min-height: 80px;
+    padding: 16px;
+    min-height: 90px;
     min-width: 160px;
-    max-width: 200px;
+    max-width: 220px;
   }
-  
+
   .iedc-logo-loop .logo-item img {
-    max-height: 60px;
+    max-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .who-fuels-us {
+    padding: 40px 12px;
+  }
+
+  .title-word {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  .main-title {
+    gap: 10px;
+    margin-bottom: 35px;
+  }
+
+  .partner-categories {
+    gap: 25px;
+    margin-bottom: 35px;
+  }
+
+  .category-title {
+    font-size: 28px;
+  }
+
+  .partner-logo {
+    max-width: 180px;
+  }
+
+  .partner-name {
+    font-size: 16px;
+  }
+
+  .iedc-scroll-container {
+    height: 100px;
+  }
+
+  .iedc-logo-loop {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .iedc-logo-loop .logo-item {
+    flex: 0 0 auto;
+    padding: 10px;
+    min-width: 140px;
+    max-width: 180px;
+    scroll-snap-align: start;
+  }
+
+  .iedc-logo-loop .logo-item img {
+    max-height: 50px;
   }
 }
