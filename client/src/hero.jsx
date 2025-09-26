@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 import styled from "styled-components";
 import keyframes from "styled-components";
@@ -37,7 +37,6 @@ const Title = styled.h2`
   @media (max-width: 768px) {
     top: 42%;
     left: 46%;
-    font-size: 120px;
   }
 
   @media (max-width: 480px) {
@@ -70,6 +69,25 @@ const WordRow = styled.div`
 `;
 
 function Hero() {
+  const [titleVisible, setTitleVisible] = useState(false);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTitleVisible(true);
+          observer.disconnect(); // stop observing after animation triggers
+        }
+      },
+      { threshold: 0.3 } // 30% of section visible
+    );
+
+    if (heroRef.current) observer.observe(heroRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="hero">
       <div className="hero-container">
