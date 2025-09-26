@@ -112,6 +112,7 @@ const CardOuter = styled.div`
   width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
 
+  /* Desktop hover */
   ${props =>
     !props.isMobile &&
     `
@@ -119,6 +120,15 @@ const CardOuter = styled.div`
       z-index: 100;
       transform: rotate(${props.rotate}deg) translateY(-10px) scale(1.03);
     }
+  `}
+
+  /* Mobile tap / visible effect */
+  ${props =>
+    props.isMobile &&
+    props.tapped &&
+    `
+    z-index: 100;
+    transform: rotate(${props.rotate}deg) translateY(-10px) scale(1.03);
   `}
 
   @media (max-width: 768px) {
@@ -141,19 +151,19 @@ const CardInner = styled.div`
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
 
-  ${({ isMobile, visible }) =>
-    isMobile
-      ? visible &&
-        `
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 20px 0 black;
-    `
-      : `
-    &:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 20px 0 black;
-    }
-  `}
+  ${({ isMobile, visible, tapped }) => 
+    (isMobile && (visible || tapped))
+      ? `
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 0 black;
+      `
+      : !isMobile
+      ? `&:hover {
+          transform: translateY(-10px) scale(1.05);
+          box-shadow: 0 20px 0 black;
+        }`
+      : ''
+  }
 
   @media (max-width: 768px) {
     border-radius: 12px;
@@ -267,6 +277,8 @@ const WhatAwaits = () => {
     return () => observer.disconnect();
   }, []);
 
+  const [tappedCard, setTappedCard] = useState(null);
+
   return (
     <>
     <Section ref={sectionRef} id='about'>
@@ -278,9 +290,17 @@ const WhatAwaits = () => {
         <TiltWord rotate={-4}>You?</TiltWord>
       </Title>
       <CardWrapper>
-        <CardOuter z={1} index={0} visible={visible} delay={0} isMobile={isMobile}>
+        <CardOuter
+            z={1}
+            index={0}
+            visible={visible}
+            delay={0}
+            isMobile={isMobile}
+            tapped={tappedCard === 0}
+            onClick={() => isMobile && setTappedCard(tappedCard === 0 ? null : 0)}
+          >
             <CardRotateWrapper rotate={-6}>
-            <CardInner visible={visible} isMobile={isMobile}>
+            <CardInner visible={visible} isMobile={isMobile} tapped={tappedCard === 0}>
           <CardTitle>Ignite</CardTitle>
           <IconWrapper>
             <img src={Rocket} alt="Rocket Icon" />
