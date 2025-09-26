@@ -83,19 +83,12 @@
   .logo-track {
     display: flex;
     align-items: center;
-    gap: var(--logo-gap, 40px);
+    gap: var(--logo-gap, 10px);
     will-change: transform;
     user-select: none;
     transform: translate3d(0, 0, 0);
     box-sizing: border-box;
     max-width: 100%; /* ✅ keeps flex children from stretching out */
-  }
-
-  /* 2. Ensure no trailing gap in mobile */
-  @media (max-width: 480px) {
-    .logo-track {
-      gap: 20px; /* smaller gap so two sets fit tightly */
-    }
   }
 
   /* 3. Make fade overlays not extend container width */
