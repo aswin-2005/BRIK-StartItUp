@@ -216,7 +216,7 @@
   }
 
   .category-title {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .partner-logo {
@@ -228,12 +228,12 @@
   }
 
   .iedc-scroll-container {
-    height: 100px;
+    height: 120px;
   }
 
   .iedc-logo-loop {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
