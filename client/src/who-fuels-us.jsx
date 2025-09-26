@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './WhoFuelsUs.css';
 import styled from 'styled-components';
 import keyframes from 'styled-components';
@@ -32,14 +32,13 @@ const popIn = keyframes`
 const Title = styled.h2`
   font-size: 62px;
   font-family: 'Futura Extra Bold', sans-serif;
-  color: white;
+  color: #2165caff;
   margin-bottom: 70px;
   line-height: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #2165caff;
-  animation: ${popIn} 0.8s ease-out both;
+  animation: ${({ visible }) => (visible ? `${popIn} 0.8s ease-out both` : 'none')};
 
   @media (max-width: 768px) {
     font-size: 48px;
@@ -58,6 +57,24 @@ const TiltWord = styled.span`
 `;
 
 const WhoFuelsUs = () => {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
   const partnerLogos = [
     {
       src: notionLogo,
@@ -137,10 +154,10 @@ const WhoFuelsUs = () => {
   ];
 
   return (
-    <section className="who-fuels-us" id='partners'>
+    <section className="who-fuels-us" id='partners' ref={sectionRef}>
       <div className="who-fuels-us-container">
         {/* Main Title */}
-        <Title>
+        <Title visible={visible}>
         <div style={{ display: 'flex', gap: '12px' }}>
             <TiltWord rotate={-2}>Who</TiltWord>
             <TiltWord rotate={5}>Fuels</TiltWord>
