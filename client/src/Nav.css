@@ -98,11 +98,14 @@ html {
 /* Tablet responsiveness */
 @media (min-width: 481px) and (max-width: 1024px) {
   .nav-container {
+    padding: 0 1rem; /* keep some padding if needed */
+    width: 100vw; /* make full viewport width */
+    max-width: 100%; /* prevent any unintended constrains */
     display: flex;
-    justify-content: flex-start; /* align left links to left */
+    justify-content: space-between; /* push logo and hamburger apart */
     align-items: center;
-    position: relative; /* for absolute logo centering */
-    padding: 0 10px;
+    box-sizing: border-box;
+    position: relative; /* for absolute children if needed */
   }
 
   .nav-logo {
@@ -142,6 +145,7 @@ html {
     white-space: nowrap;
     padding: 0.5rem 1.5rem; /* slightly smaller button */
     font-size: 14px;
+    cursor: pointer;
   }
 
   .nav-logo .logo {
@@ -160,9 +164,11 @@ html {
 /* Hamburger menu (mobile) */
 @media (max-width: 480px) {
   .nav-container {
-    padding: 0 1rem; /* reduce horizontal padding */
-    width: 100%;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 1rem;
   }
 
   .nav-links,
@@ -170,14 +176,21 @@ html {
     display: none; /* hide desktop links */
   }
 
+  .nav-logo {
+    position: absolute; /* center logo */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .nav-logo .logo {
     height: 100px;
     left: 50%;
   }
 
-  .subtext {
-    height: 65px;
-    left: 50%;
+  .nav-logo .subtext {
+    height: 20px; /* adjust to a smaller height for mobile */
+    width: auto; /* preserve aspect ratio */
+    object-fit: contain;
   }
 
   .hamburger {
@@ -187,7 +200,9 @@ html {
     width: 25px;
     height: 20px;
     cursor: pointer;
-    margin-left: 0; /* push to right */
+    margin-left: auto; /* push to right */
+    position: relative;
+    z-index: 1000;
   }
 
   .hamburger div {
@@ -201,9 +216,9 @@ html {
   /* Mobile menu */
   .mobile-menu {
     position: absolute;
-    top: 140px; /* just below nav */
+    top: 80px; /* just below nav */
     left: 0;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     display: flex;
     flex-direction: column;
