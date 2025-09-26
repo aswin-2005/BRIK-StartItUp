@@ -12,11 +12,11 @@ import ideasphereLogo from './assets/College IEDCs/ideasphere logo.jpg';
 import iedcColouredLogo from './assets/College IEDCs/IEDC COLOURED.png';
 import iedcLogo from './assets/College IEDCs/Iedc Logo.jpg';
 import imgLogo from './assets/College IEDCs/IMG-20250921-WA0049.jpg';
-import mbitsLogo from './assets/College IEDCs/mbits.png';
+import mbitsLogo from './assets/College IEDCs/mbitss.png';
 import mecLogo from './assets/College IEDCs/mec logo.png';
 import novaLogo from './assets/College IEDCs/nova logo.jpg';
-import officialLogo from './assets/College IEDCs/Official logo.png';
-import tdfggchLogo from './assets/College IEDCs/tdfggch.png';
+import officialLogo from './assets/College IEDCs/helios.png';
+import tdfggchLogo from './assets/College IEDCs/cec.png';
 
 const popIn = keyframes`
   0% {
