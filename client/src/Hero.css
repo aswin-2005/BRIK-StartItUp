@@ -5,12 +5,21 @@
   font-style: normal;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .hero {
   background-color: white;
   width: 100%;
   min-height: calc(100vh - 90px); /* full screen minus nav */
   display: flex;
   align-items: center;
+
+  @media (max-width: 480px) {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
 }
 
 .hero-container {
@@ -27,6 +36,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 480px) {
+    position: relative; /* allows top to work */
+    top: -10%; /* move up 5% from normal position; adjust as needed */
+    align-items: flex-start;
+    /*transform: scale(0.95);
+    transform-origin: left top;*/
+  }
 }
 
 .hero-img {
@@ -34,6 +51,7 @@
   height: auto;
   object-fit: contain;
 }
+
 .hero-center {
   position: absolute;
   top: 65%; /* move higher */
@@ -48,61 +66,65 @@
 .hero-subpart {
   display: flex;
 }
-
-.hero-word {
-  font-family: "FuturaExtraBold", Helvetica, sans-serif;
-  font-weight: 800;
-  font-size: 150px;
-  margin: 0;
-  color: #111;
-  display: block;
-}
-
-/* Start */
-.hero-word.start {
-  transform: rotate(-3.8deg);
-  position: absolute;
-  top: -200px;
-}
-
-.hero-word.it {
-  transform: rotate(7.6deg);
-  margin-top: -4rem;
-  margin-left: 100px;
-  position: absolute;
-  left: -80px;
-}
-
-.hero-word.up {
-  transform: rotate(-6.84deg);
-  /* margin-left: 40px;    align 'Up' more directly under Start */
-  margin-top: 20px; /* keep it lifted up */
-  position: absolute;
-  top: -90px;
-  left: 200px;
-}
 .hero-timeline {
   display: flex;
   align-items: center;
   justify-content: center; /* start from center */
-  margin-top: 150px; /* space below Start/It/Up */
+  margin-top: 120px; /* space below Start/It/Up */
   gap: 1.5rem; /* space between items */
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 32px;
   color: #111;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    gap: 1rem;
+    transform: translateX(-10%);
+  }
+
+  @media (max-width: 480px) {
+    position: absolute; /* remove extra spacing below title */
+    font-size: 14px;
+    gap: 0.8rem;
+    justify-content: flex-start; /* start a bit right of center */
+    transform: translateX(50%);
+    top: 18%;
+  }
 }
 
 .timeline-arrow {
   width: 40px; /* adjust size */
   height: auto;
+
+  @media (max-width: 480px) {
+    width: 20px;
+  }
 }
+
 .hero-actions {
   position: absolute;
-  right: 11%;
-  bottom: 9%;
+  right: 9%;
+  bottom: 15%;
   display: flex;
+  flex-direction: row; /* makes sure they stay side by side */
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    bottom: auto; /* reset bottom */
+    top: 76%; /* move higher (adjust as needed) */
+    right: 28%; /* center horizontally */
+    transform: translateX(50%); /* push it back into view */
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    bottom: auto; /* reset bottom */
+    top: 40%; /* move higher (adjust as needed) */
+    right: 35%; /* center horizontally */
+    transform: translateX(50%); /* push it back into view */
+    gap: 1rem; /* tighter gap for mobile */
+  }
 }
 
 /* Know More button */
@@ -117,28 +139,83 @@
   border-radius: 999px; /* oval/pill shape */
   cursor: pointer;
   transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.apply-butn {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff; /* black text */
+  background-color: #2966eb; /* white bg */
+  border: 3px solid #000; /* thick black border */
+  padding: 0.6rem 1.8rem; /* same sizing */
+  border-radius: 999px; /* oval/pill shape */
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 .know-btn:hover {
   background-color: #f4f4f4; /* subtle grey hover */
   transform: scale(1.05);
 }
+
 .hero-image-right {
   position: absolute;
-  left: 68rem;
-  top: 57%;
+  right: 0; /* stick to right edge */
+  top: 82%;
+  margin: 0; /* remove any leftover margin */
+
+  @media (max-width: 768px) {
+    transform: scale(0.65);
+    transform-origin: right;
+    top: 78%;
+    right: 0%;
+    margin: 0; /* keep aligned to right */
+  }
+
+  @media (max-width: 480px) {
+    transform: scale(0.45);
+    transform-origin: right;
+    top: 38%;
+    right: 0%;
+    margin: 0; /* keep aligned to right */
+  }
 }
+
 .hero-image-right img {
-  max-width: 25rem;
+  max-width: 50rem;
   height: auto;
-  transform: translateX(10%); /* move 10% further right */
+  display: block;
+  transform: none; /* remove the shift */
 }
 
 .hero-lines {
   position: absolute;
-  top: 30%; /* vertical position → move up/down */
-  left: 70%; /* horizontal position → move slightly right from center */
-  transform: translate(-50%, -50%); /* keep centering balanced */
+  top: 36%; /* vertical position → move up/down */
+  left: 68%; /* horizontal position → move slightly right from center */
+  transform: translate(-50%, -50%) scale(1.2); /* keep centering balanced */
+
+  @media (max-width: 768px) {
+    left: 73%;
+    top: 37.5%;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  @media (max-width: 480px) {
+    top: 22%; /* vertical position → move up/down */
+    left: 71%; /* horizontal position → move slightly right from center */
+    transform: translate(-50%, -50%) scale(0.65); /* keep centering balanced */
+  }
 }
 
 .promotion-img {
@@ -147,9 +224,21 @@
 }
 .hero-gif {
   position: absolute;
-  left: 27%;
-  bottom: -22%;
-  transform: translateX(-50%);
+  left: 28%;
+  bottom: -10%;
+  transform: translateX(-50%) scale(1.1);
+
+  @media (max-width: 768px) {
+    left: 24%;
+    top: 32%;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  @media (max-width: 480px) {
+    left: 15%;
+    top: -13%;
+    transform: translateX(-50%) scale(0.4);
+  }
 }
 
 .hero-gif img {
