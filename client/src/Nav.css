@@ -121,7 +121,7 @@ html {
   .nav-links.left {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     flex-shrink: 1;
   }
 
@@ -129,7 +129,7 @@ html {
   .nav-links.right {
     display: flex;
     align-items: center;
-    gap: 1rem; /* reduce gap to prevent button cutoff */
+    gap: 2rem; /* reduce gap to prevent button cutoff */
     margin-left: auto; /* push to right side */
     flex-shrink: 0;
   }
@@ -159,9 +159,25 @@ html {
 
 /* Hamburger menu (mobile) */
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0 1rem; /* reduce horizontal padding */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .nav-links,
   .apply-btn {
     display: none; /* hide desktop links */
+  }
+
+  .nav-logo .logo {
+    height: 100px;
+    left: 50%;
+  }
+
+  .subtext {
+    height: 65px;
+    left: 50%;
   }
 
   .hamburger {
@@ -171,7 +187,7 @@ html {
     width: 25px;
     height: 20px;
     cursor: pointer;
-    margin-left: auto; /* push to right */
+    margin-left: 0; /* push to right */
   }
 
   .hamburger div {
@@ -225,23 +241,6 @@ html {
   }
 
   .mobile-menu button:hover {
-    background-color: #1558b0;
-    transform: scale(1.05);
-  }
-}
-
-@media (max-width: 480px) {
-  .mobile-menu .apply-btn {
-    background-color: #2966eb;
-    color: #fff !important;
-    padding: 0.5rem 1.5rem;
-    border-radius: 999px;
-    border: 3px solid #000;
-    transition: background 0.2s, transform 0.2s;
-    font-size: 16px;
-  }
-
-  .mobile-menu .apply-btn:hover {
     background-color: #1558b0;
     transform: scale(1.05);
   }
