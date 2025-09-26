@@ -83,7 +83,7 @@
   .logo-track {
     display: flex;
     align-items: center;
-    gap: var(--logo-gap, 10px);
+    gap: var(--logo-gap, 2px);
     will-change: transform;
     user-select: none;
     transform: translate3d(0, 0, 0);
