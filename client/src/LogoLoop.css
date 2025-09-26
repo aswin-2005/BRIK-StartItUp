@@ -38,7 +38,7 @@
 /* Fade out edges */
 .logo-loop.fade-out::before,
 .logo-loop.fade-out::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -78,6 +78,39 @@
   .logo-loop.fade-out::after {
     width: 30px;
   }
+
+  /* 1. Prevent flex from overflowing */
+  .logo-track {
+    display: flex;
+    align-items: center;
+    gap: var(--logo-gap, 40px);
+    will-change: transform;
+    user-select: none;
+    transform: translate3d(0, 0, 0);
+    box-sizing: border-box;
+    max-width: 100%; /* ✅ keeps flex children from stretching out */
+  }
+
+  /* 2. Ensure no trailing gap in mobile */
+  @media (max-width: 480px) {
+    .logo-track {
+      gap: 20px; /* smaller gap so two sets fit tightly */
+    }
+  }
+
+  /* 3. Make fade overlays not extend container width */
+  .logo-loop.fade-out::before,
+  .logo-loop.fade-out::after {
+    box-sizing: border-box;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* 4. Ensure images never push width */
+  .logo-item img {
+    max-width: 100%; /* ✅ ensures no img causes overflow */
+    height: auto;
+  }
 }
 
 /* Smooth animation */
@@ -85,7 +118,7 @@
   .logo-track {
     animation: none !important;
   }
-  
+
   .logo-item {
     transition: none !important;
   }
