@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="bg-blue-600 text-white py-12 px-8 font-helvetica">
       <div className="max-w-6xl mx-auto">
         {/* Top section with logo and initiative text */}
-        <div className="flex justify-between items-start mb-12">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
           <img src={startItUpLogo} alt="startitup logo" />
-          <div className="text-right">
+          <div className="text-left sm:text-right mt-4 sm:mt-0">
             <div className="text-lg mb-2">An Initiative By</div>
             <div className="text-4xl font-bold">BRIK</div>
           </div>
