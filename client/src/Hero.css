@@ -1,3 +1,4 @@
+/* -------------------- Fonts -------------------- */
 @font-face {
   font-family: "FuturaExtraBold";
   src: url("./assets/fonts/Futura Extra Bold.otf") format("opentype");
@@ -5,21 +6,18 @@
   font-style: normal;
 }
 
+/* -------------------- Global -------------------- */
 body {
   overflow-x: hidden;
 }
 
+/* -------------------- Hero Section -------------------- */
 .hero {
   background-color: white;
   width: 100%;
   min-height: calc(100vh - 90px); /* full screen minus nav */
   display: flex;
   align-items: center;
-
-  @media (max-width: 480px) {
-    min-height: auto;
-    padding-bottom: 2rem;
-  }
 }
 
 .hero-container {
@@ -31,19 +29,11 @@ body {
   padding: 0;
 }
 
-/* Left side: image */
+/* -------------------- Left Side -------------------- */
 .hero-left {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  @media (max-width: 480px) {
-    position: relative; /* allows top to work */
-    top: -10%; /* move up 5% from normal position; adjust as needed */
-    align-items: flex-start;
-    /*transform: scale(0.95);
-    transform-origin: left top;*/
-  }
 }
 
 .hero-img {
@@ -52,196 +42,217 @@ body {
   object-fit: contain;
 }
 
+/* -------------------- Center Text -------------------- */
 .hero-center {
   position: absolute;
-  top: 65%; /* move higher */
-  left: 50%;
+  top: 50vh;
+  left: 40vw;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  top: 50vh;
-  left: 40vw;
 }
 
 .hero-subpart {
   display: flex;
 }
+
+/* -------------------- Timeline -------------------- */
 .hero-timeline {
   display: flex;
   align-items: center;
-  justify-content: center; /* start from center */
-  margin-top: 120px; /* space below Start/It/Up */
-  gap: 1.5rem; /* space between items */
+  justify-content: center;
+  margin-top: 120px;
+  gap: 1.5rem;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 32px;
   color: #111;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-    gap: 1rem;
-    transform: translateX(-10%);
-  }
-
-  @media (max-width: 480px) {
-    position: absolute; /* remove extra spacing below title */
-    font-size: 14px;
-    gap: 0.8rem;
-    justify-content: flex-start; /* start a bit right of center */
-    transform: translateX(50%);
-    top: 18%;
-  }
 }
 
 .timeline-arrow {
-  width: 40px; /* adjust size */
+  width: 40px;
   height: auto;
-
-  @media (max-width: 480px) {
-    width: 20px;
-  }
 }
 
+/* -------------------- Actions -------------------- */
 .hero-actions {
   position: absolute;
   right: 9%;
   bottom: 15%;
   display: flex;
-  flex-direction: row; /* makes sure they stay side by side */
+  flex-direction: row;
   gap: 3rem;
-
-  @media (max-width: 768px) {
-    bottom: auto; /* reset bottom */
-    top: 76%; /* move higher (adjust as needed) */
-    right: 28%; /* center horizontally */
-    transform: translateX(50%); /* push it back into view */
-    gap: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    bottom: auto; /* reset bottom */
-    top: 40%; /* move higher (adjust as needed) */
-    right: 35%; /* center horizontally */
-    transform: translateX(50%); /* push it back into view */
-    gap: 1rem; /* tighter gap for mobile */
-  }
 }
 
-/* Know More button */
-.know-btn {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  color: #111; /* black text */
-  background-color: #fff; /* white bg */
-  border: 3px solid #000; /* thick black border */
-  padding: 0.6rem 1.8rem; /* same sizing */
-  border-radius: 999px; /* oval/pill shape */
-  cursor: pointer;
-  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
-
-  @media (max-width: 480px) {
-    font-size: 11px;
-    padding: 0.5rem 1.5rem;
-  }
-}
-
+.know-btn,
 .apply-butn {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: #fff; /* black text */
-  background-color: #2966eb; /* white bg */
-  border: 3px solid #000; /* thick black border */
-  padding: 0.6rem 1.8rem; /* same sizing */
-  border-radius: 999px; /* oval/pill shape */
+  border: 3px solid #000;
+  padding: 0.6rem 1.8rem;
+  border-radius: 999px;
   cursor: pointer;
   transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
 
-  @media (max-width: 480px) {
-    font-size: 11px;
-    padding: 0.5rem 1.5rem;
-  }
+.know-btn {
+  color: #111;
+  background-color: #fff;
 }
 
 .know-btn:hover {
-  background-color: #f4f4f4; /* subtle grey hover */
+  background-color: #f4f4f4;
   transform: scale(1.05);
 }
 
+.apply-butn {
+  color: #fff;
+  background-color: #2966eb;
+}
+
+.apply-butn:hover {
+  background-color: #1558b0;
+  transform: scale(1.05);
+}
+
+/* -------------------- Right Image -------------------- */
 .hero-image-right {
   position: absolute;
-  right: 0; /* stick to right edge */
+  right: 0;
   top: 82%;
-  margin: 0; /* remove any leftover margin */
-
-  @media (max-width: 768px) {
-    transform: scale(0.65);
-    transform-origin: right;
-    top: 78%;
-    right: 0%;
-    margin: 0; /* keep aligned to right */
-  }
-
-  @media (max-width: 480px) {
-    transform: scale(0.45);
-    transform-origin: right;
-    top: 38%;
-    right: 0%;
-    margin: 0; /* keep aligned to right */
-  }
+  margin: 0;
 }
 
 .hero-image-right img {
   max-width: 50rem;
   height: auto;
   display: block;
-  transform: none; /* remove the shift */
 }
 
+/* -------------------- Lines -------------------- */
 .hero-lines {
   position: absolute;
-  top: 36%; /* vertical position → move up/down */
-  left: 68%; /* horizontal position → move slightly right from center */
-  transform: translate(-50%, -50%) scale(1.2); /* keep centering balanced */
-
-  @media (max-width: 768px) {
-    left: 73%;
-    top: 37.5%;
-    transform: translate(-50%, -50%) scale(1.25);
-  }
-
-  @media (max-width: 480px) {
-    top: 22%; /* vertical position → move up/down */
-    left: 71%; /* horizontal position → move slightly right from center */
-    transform: translate(-50%, -50%) scale(0.65); /* keep centering balanced */
-  }
+  top: 36%;
+  left: 68%;
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 .promotion-img {
-  max-width: 400px; /* adjust size */
+  max-width: 400px;
   height: auto;
 }
+
+/* -------------------- GIF -------------------- */
 .hero-gif {
   position: absolute;
   left: 28%;
   bottom: -10%;
   transform: translateX(-50%) scale(1.1);
-
-  @media (max-width: 768px) {
-    left: 24%;
-    top: 32%;
-    transform: translateX(-50%) scale(0.95);
-  }
-
-  @media (max-width: 480px) {
-    left: 15%;
-    top: -13%;
-    transform: translateX(-50%) scale(0.4);
-  }
 }
 
 .hero-gif img {
   max-width: 36rem;
   height: auto;
+}
+
+/* -------------------- Tablet (≤768px) -------------------- */
+@media (max-width: 768px) {
+  .hero-timeline {
+    font-size: 20px;
+    gap: 1rem;
+    transform: translateX(-10%);
+  }
+
+  .timeline-arrow {
+    width: 30px;
+  }
+
+  .hero-actions {
+    bottom: auto;
+    top: 76%;
+    right: 28%;
+    transform: translateX(50%);
+    gap: 1rem;
+  }
+
+  .hero-image-right {
+    transform: scale(0.65);
+    transform-origin: right;
+    top: 78%;
+    right: 0%;
+  }
+
+  .hero-lines {
+    left: 73%;
+    top: 37.5%;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  .hero-gif {
+    left: 24%;
+    top: 32%;
+    transform: translateX(-50%) scale(0.95);
+  }
+}
+
+/* -------------------- Mobile (≤480px) -------------------- */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .hero-left {
+    position: relative;
+    top: -10%;
+    align-items: flex-start;
+  }
+
+  .hero-timeline {
+    position: absolute;
+    font-size: 14px;
+    gap: 0.1rem;
+    justify-content: flex-start;
+    transform: translateX(50%);
+    top: 18%;
+    right: 35%;
+  }
+
+  .timeline-arrow {
+    width: 20px;
+  }
+
+  .hero-actions {
+    bottom: auto;
+    top: 40%;
+    right: 35%;
+    transform: translateX(50%);
+    gap: 1rem;
+  }
+
+  .know-btn,
+  .apply-butn {
+    font-size: 11px;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .hero-image-right {
+    transform: scale(0.35);
+    transform-origin: right;
+    top: 38%;
+    right: 0%;
+  }
+
+  .hero-lines {
+    top: 22%;
+    left: 75%;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  .hero-gif {
+    left: 15%;
+    top: -13%;
+    transform: translateX(-50%) scale(0.4);
+  }
 }
