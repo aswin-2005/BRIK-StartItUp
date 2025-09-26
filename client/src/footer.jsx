@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         {/* Top section with logo and initiative text */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-          <img src={startItUpLogo} alt="startitup logo" />
+          <img src={startItUpLogo} alt="startitup logo" className="h-36 md:h-auto w-auto mb-8" />
           <div className="text-left sm:text-right mt-4 sm:mt-0">
             <div className="text-lg mb-2">An Initiative By</div>
             <div className="text-4xl font-bold">BRIK</div>
@@ -24,12 +24,12 @@ const Footer = () => {
             </h3>
             <nav className="space-y-4 text-left">
               <div>
-                <a href="#" className="text-xl  hover:underline">
+                <a href="#about" className="text-xl  hover:underline">
                   About
                 </a>
               </div>
               <div>
-                <a href="#" className="text-xl  hover:underline">
+                <a href="#partners" className="text-xl  hover:underline">
                   Partners
                 </a>
               </div>
