@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './WhoFuelsUs.css';
 import styled from 'styled-components';
-import keyframes from 'styled-components';
+import { keyframes, css } from 'styled-components';
 import LogoLoop from './LogoLoop';
 import notionLogo from './assets/notion.png';
 import hubspotLogo from './assets/hubspot.png';
@@ -29,8 +29,13 @@ const popIn = keyframes`
   }
 `;
 
+const fadeUp = keyframes`
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+`;
+
 const Title = styled.h2`
-  font-size: 62px;
+  font-size: 70px;
   font-family: 'Futura Extra Bold', sans-serif;
   color: #2165caff;
   margin-bottom: 70px;
@@ -38,15 +43,20 @@ const Title = styled.h2`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${({ visible }) => (visible ? `${popIn} 0.8s ease-out both` : 'none')};
+  
+  ${({ visible }) =>
+    visible &&
+    css`
+      animation: ${popIn} 0.8s ease-out forwards;
+    `}
 
   @media (max-width: 768px) {
-    font-size: 48px;
+    font-size: 70px;
     margin-bottom: 50px;
   }
 
   @media (max-width: 480px) {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 40px;
   }
 `;
@@ -56,25 +66,52 @@ const TiltWord = styled.span`
   transform: rotate(${props => props.rotate}deg);
 `;
 
+
+const PartnerCategory = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  opacity: 0;  // start hidden
+  ${({ visible, delay }) =>
+    visible &&
+    css`
+      animation: ${fadeUp} 0.6s ease-out forwards;
+      animation-delay: ${delay}s;
+    `}
+`;
+
 const WhoFuelsUs = () => {
   const [visible, setVisible] = useState(false);
+  const [partnersVisible, setPartnersVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) setVisible(true);
+    },
+    { threshold: 0.3 }
+  );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+  const partnerObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) setPartnersVisible(true);
+    },
+    { threshold: 0.3 }
+  );
 
-    return () => observer.disconnect();
-  }, []);
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current.querySelector('h2')); // main title
+    partnerObserver.observe(sectionRef.current.querySelector('.partner-categories'));
+  }
+
+  return () => {
+    observer.disconnect();
+    partnerObserver.disconnect();
+  };
+}, []);
+  
   const partnerLogos = [
     {
       src: notionLogo,
@@ -167,32 +204,16 @@ const WhoFuelsUs = () => {
 
         {/* Partner Categories */}
         <div className="partner-categories">
-          {/* Productivity Platform Partner */}
-          <div className="partner-category">
-            <h3 className="category-title">Productivity Platform Partner</h3>
-            <div className="partner-logo-container">
-              <img 
-                src={partnerLogos[0].src} 
-                alt={partnerLogos[0].alt} 
-                className={`partner-logo ${partnerLogos[0].className}`}
-              />
-              <span className="partner-name">Notion</span>
-            </div>
+            {partnerLogos.map((partner, i) => (
+              <PartnerCategory key={i} visible={partnersVisible} delay={i * 0.2}>
+                <h3 className="category-title">{partner.title}</h3>
+                <div className="partner-logo-container">
+                  <img src={partner.src} alt={partner.alt} className={`partner-logo ${partner.className}`} />
+                  <span className="partner-name">{partner.alt}</span>
+                </div>
+              </PartnerCategory>
+            ))}
           </div>
-
-          {/* CRM & Growth Partner */}
-          <div className="partner-category">
-            <h3 className="category-title">CRM & Growth Partner</h3>
-            <div className="partner-logo-container">
-              <img 
-                src={partnerLogos[1].src} 
-                alt={partnerLogos[1].alt} 
-                className={`partner-logo ${partnerLogos[1].className}`}
-              />
-              <span className="partner-name">HubSpot</span>
-            </div>
-          </div>
-        </div>
 
         {/* College IEDCs */}
         <div className="college-iedcs">
