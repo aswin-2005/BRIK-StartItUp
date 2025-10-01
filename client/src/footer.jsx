@@ -38,6 +38,11 @@ const Footer = () => {
                 </a>
               </div>
               <div>
+                <a href="#" className="text-xl  hover:underline">
+                  Contact
+                </a>
+              </div>
+              <div>
                 <a
                   href="https://app.makemypass.com/event/start-it-up"
                   className="text-xl  hover:underline"
@@ -63,6 +68,15 @@ const Footer = () => {
               <p>
                 <strong className="font-bold">Phone/WhatsApp:</strong>{" "}
                 +91-9961020050
+              </p>
+              <p className="flex items-center gap-2">
+                <strong className="font-bold">LinkedIn:</strong>{" "}
+                <a
+                  href="https://www.linkedin.com/company/brikcommunity/"
+                  className="text-white-200 hover:underline flex items-center gap-1"
+                >
+                  BRIK Community
+                </a>
               </p>
             </div>
           </div>
