@@ -342,7 +342,7 @@ const WhatAwaits = () => {
       </CardWrapper>
     </Section>
     <Paragraph>
-        A statewide startup challenge accelerator that takes student teams from idea to MVP to Demo Day in 8 weeks, with local IEDCs runnig cohorts and BRIK providing curriculum, mentors, and statewide coordination.
+        A statewide startup challenge accelerator that takes student teams from idea to MVP to Demo Day in 8 weeks, with local IEDCs running cohorts and BRIK providing curriculum, mentors, and statewide coordination.
     </Paragraph>
     </>
   );
