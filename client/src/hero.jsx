@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 import styled from "styled-components";
 import keyframes from "styled-components";
-import bulbGif from "./assets/bulb gif.png";
+import bulbGif from "./assets/bulb gif.gif";
 import abstractRings from "./assets/abstract rings.png";
 import rightArrow from "./assets/Right Arrow.png";
 import curvedArrow from "./assets/curved arrow(1).png";
@@ -124,7 +124,7 @@ function Hero() {
         </div>
 
         <div className="hero-actions">
-          <button className="know-btn">Know More</button>
+          <a href="/program"><button className="know-btn">Know More</button></a>
           <button onClick={() => window.location.href = "https://app.makemypass.com/event/start-it-up"} className="apply-butn">Apply Now</button>
         </div>
 
@@ -143,8 +143,8 @@ function Hero() {
           />
         </div>
 
-        <div className="hero-gif">
-          <img src={bulbGif} alt="bulb gif" />
+        <div className="hero-gif-wrapper">
+          <img src={bulbGif} alt="bulb gif" className="hero-gif" />
         </div>
       </div>
     </section>
