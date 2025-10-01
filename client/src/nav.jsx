@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 import startItUpLogo from "./assets/start-it-up logo-2.png";
 import byBRIK from "./assets/by.png";
-import brikLogo from "./assets/BRIK white.png";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,20 +14,27 @@ export default function Nav() {
       <div className="nav-container">
         {/* Left links */}
         <nav className="nav-links left">
+          <a href="/">Home</a>
           <a href="#about">About</a>
-          <a href="#program">Program</a>
-          <a href="#partners">Partners</a>
+          <a href="/program">Program</a>
         </nav>
 
         {/* Center logo */}
         <div className="nav-logo">
           <img src={startItUpLogo} alt="Main Logo" className="logo" />
-          <img src={byBRIK} alt="logo subtext" className="subtext" />
+
+          <a
+            href="https://www.brikcommunity.com/"
+            className="subtext"
+          >
+            By <span>BRIK</span>
+          </a>
         </div>
 
         {/* Right links */}
         <nav className="nav-links right">
           <a href="#">Contact</a>
+          <a href="#partners">Partners</a>
           <a 
             href="https://app.makemypass.com/event/start-it-up" 
             id="apply" 
@@ -46,8 +53,9 @@ export default function Nav() {
 
         {/* Mobile menu */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+          <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#program" onClick={() => setMenuOpen(false)}>Program</a>
+          <a href="/program" onClick={() => setMenuOpen(false)}>Program</a>
           <a href="#partners" onClick={() => setMenuOpen(false)}>Partners</a>
           <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
           <button className="apply-btn" onClick={() => setMenuOpen(false)}>Apply Now</button>
