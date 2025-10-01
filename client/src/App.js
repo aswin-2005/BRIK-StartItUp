@@ -1,20 +1,19 @@
 import React from 'react';
-import './App.css';
-import Nav from './nav';
-import Hero from './hero';
-import WhatAwaits from './what-awaits';
-import WhoFuelsUs from './who-fuels-us';
-import Footer from './footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';  // Rename your existing App component to AppHome
+import Program from './program';
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <Hero />
-      <WhatAwaits />
-      <WhoFuelsUs />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        {/* Home page */}
+        <Route path="/" element={<Home />} />
+
+        {/* Program page */}
+        <Route path="/program" element={<Program />} />
+      </Routes>
+    </Router>
   );
 }
 
