@@ -76,7 +76,7 @@ const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: 62px;
+    font-size: 48px;
     margin-bottom: 40px;
   }
 `;

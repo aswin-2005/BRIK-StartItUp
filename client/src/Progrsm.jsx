@@ -26,7 +26,7 @@ const WhyTitle = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: 62px;
+    font-size: 48px;
   }
 `;
 
