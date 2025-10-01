@@ -1,31 +1,75 @@
 import React from "react";
+import styled, { keyframes } from "styled-components";
 import "./Program.css";
+
+const popIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+`;
+
+const WhyTitle = styled.h1`
+  font-family: "Futura Extra Bold", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 1.05;
+  color: #2165ca;
+  animation: ${popIn} 0.8s ease-out both;
+
+  @media (max-width: 768px) {
+    font-size: 80px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 62px;
+  }
+`;
+
+const TitleWord = styled.span`
+  display: inline-block;
+  font-family: "Futura Extra Bold", sans-serif;
+  color: #2165ca;
+
+  &.why {
+    transform: rotate(-2deg);
+  }
+  &.start {
+    transform: rotate(3deg);
+  }
+  &.it {
+    transform: rotate(-4deg);
+  }
+  &.up {
+    transform: rotate(2deg);
+  }
+`;
 
 export default function Program() {
   return (
     <div className="program-root">
       <section className="program-hero">
-        <h1>
+        <p>
           Turn your idea into a real product in 8 weeks.
-          <br />
           Start-It-Up is a student-first accelerator. No
-          <br />
           lectures. No theory. Just building. By the end of 8
-          <br />
           weeks, you’ll have a working MVP, feedback from
-          <br />
           mentors, and a pitch-ready product.
-        </h1>
+        </p>
       </section>
 
       <section className="why-root">
-        <h2 className="why-title">
-          <span className="title-word why">Why</span>{" "}
-          <span className="title-word start">Start</span>
+        <WhyTitle>
+          <TitleWord className="why">Why</TitleWord>{" "}
+          <TitleWord className="start">Start</TitleWord>
           <br />
-          <span className="title-word it">It</span>{" "}
-          <span className="title-word up">Up ?</span>
-        </h2>
+          <TitleWord className="it">It</TitleWord>{" "}
+          <TitleWord className="up">Up?</TitleWord>
+        </WhyTitle>
       </section>
 
       <section className="cards-root">
