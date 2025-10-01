@@ -10,7 +10,7 @@ const Footer = () => {
           <img src={startItUpLogo} alt="startitup logo" className="h-36 md:h-auto w-auto mb-8" />
           <div className="text-left sm:text-right mt-4 sm:mt-0">
             <div className="text-lg mb-2">An Initiative By</div>
-            <div className="text-4xl font-bold">BRIK</div>
+            <div className="text-4xl font-bold"><a href="https://www.brikcommunity.com/">BRIK</a></div>
           </div>
         </div>
 
@@ -25,6 +25,11 @@ const Footer = () => {
               <div>
                 <a href="#about" className="text-xl  hover:underline">
                   About
+                </a>
+              </div>
+              <div>
+                <a href="/program" className="text-xl  hover:underline">
+                  Programs
                 </a>
               </div>
               <div>
