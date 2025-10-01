@@ -35,6 +35,17 @@ const growLineMobile = keyframes`
   to { height: 118px; }
 `;
 
+const slideInLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 const Container = styled.div`
   font-family: "Arial", sans-serif;
   padding: 40px 20px;
@@ -43,9 +54,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 62px;
+  font-size: clamp(2.5rem, 6vw, 6rem);
   font-family: 'Futura Extra Bold', sans-serif;
   color: #2165caff;
+  margin-top: 40px;
   margin-bottom: 70px;
   line-height: 1;
   display: flex;
@@ -59,12 +71,12 @@ const Title = styled.h2`
     `}
 
   @media (max-width: 768px) {
-    font-size: 48px;
+    font-size: 80px;
     margin-bottom: 50px;
   }
 
   @media (max-width: 480px) {
-    font-size: 36px;
+    font-size: 62px;
     margin-bottom: 40px;
   }
 `;
@@ -205,21 +217,28 @@ const StepTextMobile = styled.div`
 
 const FooterText = styled.p`
   font-size: 36px;
-    font-family: 'Helvetica', sans-serif;
-    font-weight: bold;
-    color: #2165caff;
-    text-align: center;
-    padding: 100px 80px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  color: #2165caff;
+  text-align: center;
+  padding: 100px 80px;
+  opacity: 0; /* start hidden */
 
-    @media (max-width: 768px) {
-        font-size: 24px;
-        padding: 40px 40px;
-    }
+  ${({ visible }) =>
+    visible &&
+    css`
+      animation: ${slideInLeft} 1s ease-out forwards;
+    `}
 
-    @media (max-width: 480px) {
-        font-size: 14px;
-        padding: 40px 20px 0px;
-    }
+  @media (max-width: 768px) {
+    font-size: 24px;
+    padding: 40px 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 40px 20px 0px;
+  }
 `;
 
 const HowItWorks = () => {
@@ -246,6 +265,8 @@ const HowItWorks = () => {
   const [lines, setLines] = useState([]);
   const [started, setStarted] = useState(false);
   const containerRef = useRef(null);
+  const [footerVisible, setFooterVisible] = useState(false);
+  const footerRef = useRef(null);
 
   // Observe scroll
   useEffect(() => {
@@ -267,6 +288,22 @@ const HowItWorks = () => {
       if (containerRef.current) observer.unobserve(containerRef.current);
     };
   }, [started]);
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setFooterVisible(true);
+        observer.unobserve(entry.target);
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  if (footerRef.current) observer.observe(footerRef.current);
+
+  return () => observer.disconnect();
+}, []);
 
   // Run animations only once when visible
   useEffect(() => {
@@ -318,7 +355,7 @@ const HowItWorks = () => {
           </StepWrapper>
         ))}
       </Timeline>
-      <FooterText>
+      <FooterText ref={footerRef} visible={footerVisible}>
         No idea is too small. No experience required.
         If you want to build something real as a student, this is the program
         for you. Learn by doing, connect with peers, and turn your ideas into reality.
