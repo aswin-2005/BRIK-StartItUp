@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
+import { keyframes, css } from 'styled-components';
 import Handshake from './assets/Handshake.png'
 import Rocket from './assets/Rocket.png'
 import Mic from './assets/Mic.png'
@@ -48,8 +48,13 @@ const fanOut = keyframes`
   }
 `;
 
+const slideInLeft = keyframes`
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+`;
+
 const Title = styled.h2`
-  font-size: 62px;
+  font-size: 70px;
   font-family: 'Futura Extra Bold', sans-serif;
   color: white;
   margin-bottom: 70px;
@@ -57,15 +62,20 @@ const Title = styled.h2`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${popIn} 0.8s ease-out both;
+  
+  ${({ visible }) =>
+    visible &&
+    css`
+      animation: ${popIn} 0.8s ease-out both;
+    `}
 
   @media (max-width: 768px) {
-    font-size: 48px;
+    font-size: 70px;
     margin-bottom: 50px;
   }
 
   @media (max-width: 480px) {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 40px;
   }
 `;
@@ -232,6 +242,12 @@ const Paragraph = styled.p`
     text-align: center;
     padding: 80px 80px;
 
+    ${({ visible }) =>
+    visible &&
+    css`
+      animation: ${slideInLeft} 0.8s ease-out forwards;
+    `}
+
     @media (max-width: 768px) {
         font-size: 24px;
         padding: 30px 40px;
@@ -257,9 +273,11 @@ const useIsMobile = () => {
 };
 
 const WhatAwaits = () => {
-    const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
-    const isMobile = useIsMobile();
+  const paraRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [paraVisible, setParaVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -277,12 +295,27 @@ const WhatAwaits = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    // Observe paragraph
+    const paraObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setParaVisible(true);
+          paraObserver.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (paraRef.current) paraObserver.observe(paraRef.current);
+    return () => paraObserver.disconnect();
+  }, []);
+
   const [tappedCard, setTappedCard] = useState(null);
 
   return (
     <>
     <Section ref={sectionRef} id='about'>
-      <Title>
+      <Title visible={visible}>
         <div style={{ display: 'flex', gap: '12px' }}>
             <TiltWord rotate={-2}>What</TiltWord>
             <TiltWord rotate={5}>Awaits</TiltWord>
@@ -341,7 +374,7 @@ const WhatAwaits = () => {
         </CardOuter>
       </CardWrapper>
     </Section>
-    <Paragraph>
+    <Paragraph ref={paraRef} visible={paraVisible}>
         A statewide startup challenge accelerator that takes student teams from idea to MVP to Demo Day in 8 weeks, with local IEDCs running cohorts and BRIK providing curriculum, mentors, and statewide coordination.
     </Paragraph>
     </>
