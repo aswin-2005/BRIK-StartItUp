@@ -51,23 +51,72 @@ const Hero = styled.section`
     animation: ${floatUp} 1s ease-out forwards;
     animation-delay: 0.3s;
     opacity: 0;
+    max-width: 70%;
+    margin: 0 auto; /* centers paragraph nicely on desktop */
+  }
+
+  .desktop-only {
+    display: inline;
+
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
 
   @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
+    padding: 3rem 1.5rem 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 100%;
+    }
   }
+
   @media (max-width: 480px) {
-    h1 { font-size: 2rem; }
+    padding: 2.5rem 1rem 1.5rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+      max-width: 100%;
+    }
   }
 `;
 
 const MentorsGrid = styled.main`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr); /* Desktop default */
+  gap: 2rem;
   padding: 3rem 6rem;
 
-  @media (max-width: 768px) { padding: 2rem; }
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr); /* Slightly smaller desktops */
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr); /* Tablets */
+    padding: 2.5rem 3rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* Mobiles too — exactly 2 cards */
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 cards even on very small screens */
+    padding: 1.5rem;
+    gap: 1rem;
+  }
 `;
 
 const MentorCard = styled.div`
@@ -97,13 +146,30 @@ const MentorCard = styled.div`
   h2 {
     font-size: 1.3rem;
     margin: 1rem 0 0.3rem;
-    color: #062e26;
+    color: #000000ff;
   }
 
   p {
     color: #666;
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
   }
 `;
 
@@ -266,8 +332,8 @@ const Mentors = () => {
       <Hero>
         <h1>Meet <span>the mentors</span></h1>
         <p>
-          Meet the visionaries fueling the next wave of innovation! Our mentors are startup <br/>
-          founders, investors, and changemakers dedicated to helping Start It Up participants <br/>
+          Meet the visionaries fueling the next wave of innovation! Our mentors are startup <br className="desktop-only"/>
+          founders, investors, and changemakers dedicated to helping Start It Up participants <br classname = "desktop-only"/>
           shape their ideas, refine their pitches, and launch impactful ventures.
         </p>
       </Hero>
