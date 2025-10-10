@@ -1,7 +1,24 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Nav from "./nav";
 import Footer from "./footer";
+
+// Animations
+const floatUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const rotate = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
 
 // Styled Components
 const PageWrapper = styled.div`
@@ -17,9 +34,10 @@ const Hero = styled.section`
 
   h1 {
     font-size: 4rem;
-    color: #000000ff;
+    color: #000;
     font-weight: 700;
     margin-bottom: 1rem;
+    animation: ${floatUp} 0.8s ease-out forwards;
   }
 
   span {
@@ -30,18 +48,16 @@ const Hero = styled.section`
     color: #444;
     font-size: 1.1rem;
     line-height: 1.6;
+    animation: ${floatUp} 1s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
   }
 
   @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
+    h1 { font-size: 2.5rem; }
   }
-
   @media (max-width: 480px) {
-    h1 {
-      font-size: 2rem;
-    }
+    h1 { font-size: 2rem; }
   }
 `;
 
@@ -51,28 +67,31 @@ const MentorsGrid = styled.main`
   gap: 2.5rem;
   padding: 3rem 6rem;
 
-  @media (max-width: 768px) {
-    padding: 2rem;
-  }
+  @media (max-width: 768px) { padding: 2rem; }
 `;
 
 const MentorCard = styled.div`
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: ${floatUp} 0.6s ease-out forwards;
+  animation-delay: ${props => props.delay}s;
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.15);
   }
 
   img {
     width: 100%;
     height: 280px;
     object-fit: cover;
+    transition: transform 0.4s ease;
   }
 
   h2 {
@@ -89,27 +108,35 @@ const MentorCard = styled.div`
 `;
 
 const LoadMoreButton = styled.button`
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin: 2rem auto 4rem;
   padding: 0.8rem 2rem;
-  background: #2165ca;
+  background: ${props => (props.loading ? "#3b7ded" : "#2165ca")};
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 999px;
   font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease;
+  cursor: ${props => (props.loading ? "not-allowed" : "pointer")};
+  transition: all 0.3s ease;
 
   &:hover {
-    background: #174b9a;
-    transform: scale(1.03);
+    background: ${props => (props.loading ? "#3b7ded" : "#174b9a")};
+    transform: ${props => (props.loading ? "none" : "scale(1.03)")};
   }
 
-  &:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-  }
+  position: relative;
+`;
+
+const Spinner = styled.div`
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: ${rotate} 1s linear infinite;
 `;
 
 const Mentors = () => {
@@ -221,11 +248,15 @@ const Mentors = () => {
     },
   ];
 
-  // Show only 8 mentors initially
   const [visibleCount, setVisibleCount] = useState(8);
+  const [loading, setLoading] = useState(false);
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 8);
+    setLoading(true);
+    setTimeout(() => { // simulate smooth loading
+      setVisibleCount(prev => prev + 8);
+      setLoading(false);
+    }, 800);
   };
 
   return (
@@ -233,17 +264,17 @@ const Mentors = () => {
       <Nav />
 
       <Hero>
-        <h1>
-          Meet <span>the mentors</span>
-        </h1>
+        <h1>Meet <span>the mentors</span></h1>
         <p>
-          Meet the visionaries fueling the next wave of innovation! Our mentors are startup <br />founders, investors, and changemakers dedicated to helping Start It Up participants <br />shape their ideas, refine their pitches, and launch impactful ventures.
+          Meet the visionaries fueling the next wave of innovation! Our mentors are startup <br/>
+          founders, investors, and changemakers dedicated to helping Start It Up participants <br/>
+          shape their ideas, refine their pitches, and launch impactful ventures.
         </p>
       </Hero>
 
       <MentorsGrid>
         {mentors.slice(0, visibleCount).map((mentor, index) => (
-          <MentorCard key={index}>
+          <MentorCard key={index} delay={index * 0.1}>
             <img src={mentor.img} alt={mentor.name} />
             <h2>{mentor.name}</h2>
             <p>{mentor.role}</p>
@@ -252,7 +283,12 @@ const Mentors = () => {
       </MentorsGrid>
 
       {visibleCount < mentors.length && (
-        <LoadMoreButton onClick={handleLoadMore}>Load More</LoadMoreButton>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <LoadMoreButton onClick={handleLoadMore} loading={loading}>
+            {loading && <Spinner />}
+            {loading ? "Loading..." : "Load More"}
+          </LoadMoreButton>
+        </div>
       )}
 
       <Footer />
