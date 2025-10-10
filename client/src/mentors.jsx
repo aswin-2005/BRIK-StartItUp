@@ -33,6 +33,7 @@ const Hero = styled.section`
   padding: 4rem 2rem 3rem;
 
   h1 {
+    margin-top:2rem;
     font-size: 4rem;
     color: #000;
     font-weight: 700;
