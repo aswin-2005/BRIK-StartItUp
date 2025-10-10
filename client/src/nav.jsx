@@ -54,10 +54,10 @@ export default function Nav() {
         {/* Mobile menu */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="https://www.brikcommunity.com/" onClick={() => setMenuOpen(false)}>About</a>
           <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="/program" onClick={() => setMenuOpen(false)}>Program</a>
-          <a href="#partners" onClick={() => setMenuOpen(false)}>Mentors</a>
+          <a href="/mentors" onClick={() => setMenuOpen(false)}>Mentors</a>
           <button className="apply-btn" onClick={() => setMenuOpen(false)}>Apply Now</button>
         </div>
       </div>
