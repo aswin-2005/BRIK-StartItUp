@@ -313,6 +313,16 @@ const Mentors = () => {
       role: "Co-founder & CEO HACA Co-Founder Stealth Founder ConnecTree Founder RizMango",
       img: "https://media.licdn.com/dms/image/v2/D5603AQGyl6ak4QXWPw/profile-displayphoto-scale_400_400/B56ZjL5IDLHcAo-/0/1755767407868?e=1762992000&v=beta&t=gEKUdn_E4M5X4bXBgMFucCdVOnkUurlQJuu4668kdDE",
     },
+    {
+      name: "Mr. Cyriac T Meppuram",
+      role: "Serial Entrepreneur | Founder, The Wellness Junxion",
+      img: "https://media.licdn.com/dms/image/v2/D5603AQG9OmxAmRQVuw/profile-displayphoto-shrink_400_400/B56Za9XtGuGsAk-/0/1746933830940?e=1762992000&v=beta&t=SZyIavQ36iGL3N1-h2mpDFIyTijyJmd5WUQgMNZeP9Y",
+    },
+    {
+      name: "Mr. Niyas Muhammed",
+      role: "General Manager at Innerspace Coworking",
+      img: "https://media.licdn.com/dms/image/v2/C5103AQEZxMc8-WwHkA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1535565583886?e=1762992000&v=beta&t=WWjTHZBzKx_2cPOVsms1Ga-BDSFG63SDqV7uh1GA43Q",
+    },
   ];
 
   const [visibleCount, setVisibleCount] = useState(8);
