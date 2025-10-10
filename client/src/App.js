@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';  // Rename your existing App component to AppHome
+import Home from './Home';
 import Program from './program';
+import Mentors from "./mentors"
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
 
         {/* Program page */}
         <Route path="/program" element={<Program />} />
+
+        {/* Mentors Page */}
+        <Route path="/mentors" element={<Mentors />} />
       </Routes>
     </Router>
   );
