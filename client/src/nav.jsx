@@ -15,8 +15,8 @@ export default function Nav() {
         {/* Left links */}
         <nav className="nav-links left">
           <a href="/">Home</a>
-          <a href="#about">About</a>
-          <a href="/program">Program</a>
+          <a href="https://www.brikcommunity.com/">About</a>
+          <a href="#">Contact</a>
         </nav>
 
         {/* Center logo */}
@@ -33,8 +33,8 @@ export default function Nav() {
 
         {/* Right links */}
         <nav className="nav-links right">
-          <a href="#">Contact</a>
-          <a href="#partners">Partners</a>
+          <a href="/program">Program</a>
+          <a href="/mentors">Mentors</a>
           <a 
             href="https://app.makemypass.com/event/start-it-up" 
             id="apply" 
@@ -55,9 +55,9 @@ export default function Nav() {
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="/program" onClick={() => setMenuOpen(false)}>Program</a>
-          <a href="#partners" onClick={() => setMenuOpen(false)}>Partners</a>
           <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="/program" onClick={() => setMenuOpen(false)}>Program</a>
+          <a href="#partners" onClick={() => setMenuOpen(false)}>Mentors</a>
           <button className="apply-btn" onClick={() => setMenuOpen(false)}>Apply Now</button>
         </div>
       </div>
