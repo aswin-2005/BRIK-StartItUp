@@ -194,6 +194,16 @@ html {
     padding: 0 1rem;
   }
 
+  .nav-container.home-page {
+    padding: 0; /* remove left/right padding */
+    width: 100vw; /* full viewport width */
+  }
+
+  .nav-container.home-page .mobile-menu {
+    width: 100vw; /* full width menu */
+    left: 0;
+  }
+
   .nav-links,
   .apply-btn {
     display: none; /* hide desktop links */
