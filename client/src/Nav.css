@@ -17,6 +17,7 @@ html {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 2rem;
+  position: relative;
 }
 
 .nav-links {
@@ -238,15 +239,16 @@ html {
   /* Mobile menu */
   .mobile-menu {
     position: absolute;
-    top: 80px; /* just below nav */
+    top: 80px; /* below nav */
     left: 0;
-    width: 90vw;
-    background-color: rgb(255, 255, 255, 0.85);
+    width: 100%; /* full width */
+    background-color: rgba(255, 255, 255, 0.95);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0; /* we'll use inner padding */
+    align-items: center; /* center nav items */
+    justify-content: center; /* optional, vertical alignment */
+    gap: 1rem; /* spacing between items */
+    padding: 0; /* inner padding handled when open */
     max-height: 0; /* hidden initially */
     overflow: hidden;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
@@ -255,7 +257,7 @@ html {
 
   .mobile-menu.open {
     max-height: 500px; /* enough to show all items */
-    padding: 1rem 0;
+    padding: 1rem 0; /* inner spacing when open */
   }
 
   .mobile-menu a,
@@ -266,6 +268,8 @@ html {
     background: none;
     border: none;
     cursor: pointer;
+    text-align: center; /* center text */
+    width: auto; /* shrink to content */
   }
 
   .mobile-menu button {
