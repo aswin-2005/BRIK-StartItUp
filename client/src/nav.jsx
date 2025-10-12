@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./Nav.css";
 import startItUpLogo from "./assets/start-it-up logo-2.png";
 
-export default function Nav() {
+export default function Nav({ page }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header className="nav">
-      <div className="nav-container">
+      <div className={`nav-container ${page === "home" ? "home-page" : ""}`}>
         {/* Left links */}
         <nav className="nav-links left">
           <a href="/">Home</a>
@@ -20,11 +20,7 @@ export default function Nav() {
         {/* Center logo */}
         <div className="nav-logo">
           <img src={startItUpLogo} alt="Main Logo" className="logo" />
-
-          <a
-            href="https://www.brikcommunity.com/"
-            className="subtext"
-          >
+          <a href="https://www.brikcommunity.com/" className="subtext">
             By <span>BRIK</span>
           </a>
         </div>
@@ -32,9 +28,9 @@ export default function Nav() {
         {/* Right links */}
         <nav className="nav-links right">
           <a href="/mentors">Mentors</a>
-          <a 
-            href="https://app.makemypass.com/event/start-it-up" 
-            id="apply" 
+          <a
+            href="https://app.makemypass.com/event/start-it-up"
+            id="apply"
             className="apply-btn"
           >
             Apply Now
