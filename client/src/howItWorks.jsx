@@ -252,11 +252,11 @@ const HowItWorks = () => {
       textMobile: <>Build your MVP. Code, design, test. Ship fast.</>
     },
     { title: "Weeks 6-7", 
-      text: <>Brand, tell your story, prep <br/>your pitch.</>,
-      textMobile: <>Build your MVP. Code, design, test. Ship fast.</>
+      text: <>Refine your product and pitch. <br />Prepare for Demo Day.</>,
+      textMobile: <>Refine your <br />product and pitch. <br/>Prepare for Demo Day.</>
     },
     { title: <>Week 8<br/>Demo Day</>, 
-      text: <>Show your product to <br/>investors, mentors, and peers.</>,
+      text: <>Show your product to investors, <br/>mentors, and peers.</>,
       textMobile: <>Show your product to investors, mentors, and peers.</>
     },
   ];
