@@ -93,6 +93,22 @@
   object-fit: contain;
 }
 
+.eco-logo {
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
+}
+
+.aws-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.Lenient-logo {
+  max-width: 150px;
+  height: auto;
+}
+
 .partner-name {
   font-family: "Helvetica", Arial, sans-serif;
   font-size: 24px;
@@ -155,6 +171,14 @@
   border-radius: 8px;
 }
 
+.community-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .who-fuels-us {
@@ -171,7 +195,17 @@
     font-size: 26px;
   }
 
+  .aws-logo,
+  .Lenient-logo {
+    max-width: 80px !important;
+    height: auto;
+  }
+
   .partner-logo {
+    max-width: 180px;
+  }
+
+  .eco-logo {
     max-width: 180px;
   }
 
@@ -221,6 +255,12 @@
 
   .partner-logo {
     max-width: 180px;
+  }
+
+  .aws-logo,
+  .Lenient-logo {
+    max-width: 80px !important;
+    height: auto;
   }
 
   .partner-name {
