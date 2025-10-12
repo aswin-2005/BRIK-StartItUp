@@ -20,6 +20,7 @@ const Section = styled.section`
   }
 
   @media (max-width: 480px) {
+    max-width: 100vw;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 40px 12px;
