@@ -7,7 +7,7 @@ import Footer from './footer';
 function Programs() {
   return (
     <div className="program" id="program">
-      <Nav />
+      <Nav page="home"/>
       <Program />
       <HowItWorks />
       <Footer />
