@@ -338,7 +338,7 @@ const Mentors = () => {
 
   return (
     <PageWrapper>
-      <Nav />
+      <Nav page="mentors"/>
 
       <Hero>
         <h1>Meet <span>the mentors</span></h1>
