@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Nav.css";
 import startItUpLogo from "./assets/start-it-up logo-2.png";
-import byBRIK from "./assets/by.png";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +14,7 @@ export default function Nav() {
         <nav className="nav-links left">
           <a href="/">Home</a>
           <a href="https://www.brikcommunity.com/">About</a>
-          <a href="#">Contact</a>
+          <a href="/program">Program</a>
         </nav>
 
         {/* Center logo */}
@@ -33,7 +31,6 @@ export default function Nav() {
 
         {/* Right links */}
         <nav className="nav-links right">
-          <a href="/program">Program</a>
           <a href="/mentors">Mentors</a>
           <a 
             href="https://app.makemypass.com/event/start-it-up" 
@@ -55,7 +52,6 @@ export default function Nav() {
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="https://www.brikcommunity.com/" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="/program" onClick={() => setMenuOpen(false)}>Program</a>
           <a href="/mentors" onClick={() => setMenuOpen(false)}>Mentors</a>
           <button className="apply-btn" onClick={() => setMenuOpen(false)}>Apply Now</button>
