@@ -8,7 +8,7 @@ import Footer from './footer';
 function Home() {
   return (
     <div className="App">
-      <Nav />
+      <Nav page="home"/>
       <Hero />
       <WhatAwaits />
       <WhoFuelsUs />
