@@ -5,6 +5,9 @@ import { keyframes, css } from 'styled-components';
 import LogoLoop from './LogoLoop';
 import notionLogo from './assets/notion.png';
 import hubspotLogo from './assets/hubspot.png';
+import AWS from './assets/AWS.png';
+import Lenient from './assets/lenientTree.png';
+import Eco from './assets/Eco.png';
 
 // Import IEDC logos
 import blackWhiteLogo from './assets/College IEDCs/Black White Bold Modern Studio Logo.png';
@@ -124,6 +127,24 @@ const WhoFuelsUs = () => {
       alt: "HubSpot",
       title: "CRM & Growth Partner",
       className: "hubspot-logo"
+    },
+    {
+      src: AWS,
+      alt: "AWS U G Kochi",
+      title: "Community Partners",
+      className: "aws-logo"
+    },
+    {
+      src: Lenient,
+      alt: "Lenient Tree",
+      title: "Community Partners",
+      className: "Lenient-logo"
+    },
+    {
+      src: Eco,
+      alt: "AICIIITK",
+      title: "Ecosystem Partner",
+      className: "eco-logo"
     }
   ];
 
@@ -204,16 +225,34 @@ const WhoFuelsUs = () => {
 
         {/* Partner Categories */}
         <div className="partner-categories">
-            {partnerLogos.map((partner, i) => (
-              <PartnerCategory key={i} visible={partnersVisible} delay={i * 0.2}>
-                <h3 className="category-title">{partner.title}</h3>
-                <div className="partner-logo-container">
-                  <img src={partner.src} alt={partner.alt} className={`partner-logo ${partner.className}`} />
-                  <span className="partner-name">{partner.alt}</span>
-                </div>
-              </PartnerCategory>
-            ))}
-          </div>
+          {Object.entries(
+            partnerLogos.reduce((acc, partner) => {
+              if (!acc[partner.title]) acc[partner.title] = [];
+              acc[partner.title].push(partner);
+              return acc;
+            }, {})
+          ).map(([title, partners], i) => (
+            <PartnerCategory key={i} visible={partnersVisible} delay={i * 0.2}>
+              <h3 className="category-title">{title}</h3>
+              <div
+                className={`partner-logo-group ${
+                  title === "Community Partners" ? "community-group" : ""
+                }`}
+              >
+                {partners.map((partner, j) => (
+                  <div key={j} className="partner-logo-container">
+                    <img
+                      src={partner.src}
+                      alt={partner.alt}
+                      className={`partner-logo ${partner.className}`}
+                    />
+                    <span className="partner-name">{partner.alt}</span>
+                  </div>
+                ))}
+              </div>
+            </PartnerCategory>
+          ))}
+        </div>
 
         {/* College IEDCs */}
         <div className="college-iedcs">
