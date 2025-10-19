@@ -12,7 +12,7 @@ import Eco from './assets/Eco.png';
 // Import IEDC logos
 import blackWhiteLogo from './assets/College IEDCs/Black White Bold Modern Studio Logo.png';
 import ideasphereLogo from './assets/College IEDCs/ideasphere logo.jpg';
-import iedcColouredLogo from './assets/College IEDCs/IEDC COLOURED.png';
+import iedcColouredLogo from './assets/College IEDCs/IEDC_BOOTCAMP.png';
 import iedcLogo from './assets/College IEDCs/Iedc Logo.jpg';
 import imgLogo from './assets/College IEDCs/IMG-20250921-WA0049.jpg';
 import mbitsLogo from './assets/College IEDCs/mbitss.png';
