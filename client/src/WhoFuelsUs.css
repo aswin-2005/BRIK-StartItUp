@@ -125,8 +125,7 @@
 }
 
 .saintgits-logo {
-  width: 400px;
-  height: 400px;
+ transform: scale(1.4);
 }
 
 .iedc-scroll-container {
