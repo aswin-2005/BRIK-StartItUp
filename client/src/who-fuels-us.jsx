@@ -209,7 +209,7 @@ const WhoFuelsUs = () => {
       alt: "TDFGGCH Logo",
       title: "TDFGGCH - Technology Development Foundation",
       className: "tdfggch-logo"
-    }
+    },
      {
       src: saintgitsLogo,
       alt: "Saintgits IEDC Logo",
