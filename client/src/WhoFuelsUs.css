@@ -124,6 +124,10 @@
   width: 100%;
 }
 
+.saintgits-logo {
+ transform: scale(1.6);
+}
+
 .iedc-scroll-container {
   width: 100%;
   max-width: 1200px;

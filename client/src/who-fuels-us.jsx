@@ -20,6 +20,7 @@ import mecLogo from './assets/College IEDCs/mec logo.png';
 import novaLogo from './assets/College IEDCs/nova logo.jpg';
 import officialLogo from './assets/College IEDCs/helios.png';
 import tdfggchLogo from './assets/College IEDCs/cec.png';
+import saintgitsLogo from './assets/College IEDCs/saintgits.png';
 
 const popIn = keyframes`
   0% {
@@ -222,6 +223,12 @@ const WhoFuelsUs = () => {
       alt: "TDFGGCH Logo",
       title: "TDFGGCH - Technology Development Foundation",
       className: "tdfggch-logo"
+    },
+     {
+      src: saintgitsLogo,
+      alt: "Saintgits IEDC Logo",
+      title: "Saintgits IEDC",
+      className: "saintgits-logo"
     }
   ];
 
