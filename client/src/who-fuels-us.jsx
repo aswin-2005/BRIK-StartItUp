@@ -145,7 +145,21 @@ const WhoFuelsUs = () => {
       alt: "AICIIITK",
       title: "Ecosystem Partner",
       className: "eco-logo"
+    },
+    // --- NEW PARTNERS ADDED HERE ---
+    {
+      src: "https://mulearn.org/assets/logo.png", // Use the imported logo variable
+      alt: "MuLearn",
+      title: "Strategic Ecosystem Partner", // The new category
+      className: "mulearn-logo"
+    },
+    {
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyBXtQzWRgxfeI-BBFNefYHuRkWPXtb2Z8bA&s", // Use the imported logo variable
+      alt: "Make My Pass",
+      title: "Ticketing Partner", // The new category
+      className: "makemypass-logo"
     }
+    // -------------------------------
   ];
 
   const collegeIEDCs = [
