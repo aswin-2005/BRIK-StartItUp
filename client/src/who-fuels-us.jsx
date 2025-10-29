@@ -151,7 +151,7 @@ const WhoFuelsUs = () => {
     {
       src: "https://mulearn.org/assets/logo.png", // Use the imported logo variable
       alt: "MuLearn",
-      title: "Strategic Ecosystem Partner", // The new category
+      title: "Strategic Partner", // The new category
       className: "mulearn-logo"
     },
     {
