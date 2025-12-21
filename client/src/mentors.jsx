@@ -3,6 +3,30 @@ import styled, { keyframes } from "styled-components";
 import Nav from "./nav";
 import Footer from "./footer";
 
+import AbidAboobaker from "./assets/mentors/Abid Aboobaker.png";
+import AinaRaj from "./assets/mentors/Aina Raj.png";
+import CyriacTMeppuram from "./assets/mentors/Cyriac T Meppuram.png";
+import IshanMohammed from "./assets/mentors/Ishan Mohammed.png";
+import KevalMorabia from "./assets/mentors/Keval Morabia.png";
+import MidhunAKunj from "./assets/mentors/Midhun A Kunj.png";
+import NikkithaShanker from "./assets/mentors/Nikkitha Shanker.png";
+import NikeshJain from "./assets/mentors/Nikesh Jain.png";
+import NiyasMuhammed from "./assets/mentors/Niyas Muhammed.png";
+import RameesAli from "./assets/mentors/Ramees Ali.png";
+import RahulGudise from "./assets/mentors/Rahul Gudise.png";
+import RanjithAntony from "./assets/mentors/Ranjith Antony.png";
+import RizwanRamzanAhamed from "./assets/mentors/Rizwan Ramzan Ahamed.png";
+import SafawanCP from "./assets/mentors/Safwan C P.png";
+import SalmanFaariz from "./assets/mentors/Salman Faariz.png";
+import SanjayKumar from "./assets/mentors/Sanjay Kumar.png";
+import SanjeevJain from "./assets/mentors/Sanjeev Jain.png";
+import ShabasNC from "./assets/mentors/Shabas N C.png";
+import ShashankMurali from "./assets/mentors/Shashank Murali.png";
+import ShibinK from "./assets/mentors/Shibin K.png";
+import SreeragAR from "./assets/mentors/Sreerag A R.png";
+import SurajJuneja from "./assets/mentors/Suraj Juneja.png";
+import VaseemRaj from "./assets/mentors/Vaseem Raj.png";
+
 // Animations
 const floatUp = keyframes`
   from {
@@ -211,117 +235,117 @@ const Mentors = () => {
     {
       name: "Mr. Sanjeev Jain",
       role: "Founder & CEO Prorata SHARK TANK INDIA S3 Founder OZOPROP Technologies Pvt. Ltd. Founder IPX Consultants Ltd.",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQEi-3UDopYoWg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1676312558743?e=1762992000&v=beta&t=bpoRoi3BL4cu3h7ldCtie2EBinCW754NKBba18tPbqw",
+      img: SanjeevJain,
     },
     {
       name: "Mr. Keval Morabia",
       role: "Gen AI @NVIDIA (Acquired) | Ex - Bloomberg, Amazon, Microsoft Research | UIUC, BITS Pilani Alum | 20k+",
-      img: "https://media.licdn.com/dms/image/v2/D4E03AQGdfV3lZuqV5A/profile-displayphoto-shrink_400_400/B4EZZn3SXdH0Ao-/0/1745499269510?e=1762992000&v=beta&t=RSVPAoP-3st2MISxN0UEUborbepEdejME5bR007orss",
+      img: KevalMorabia,
     },
     {
       name: "Mr. Ranjith Antony",
       role: "Founder @ Perleybrook Labs Inc (TechStars'24) ",
-      img: "https://media.licdn.com/dms/image/v2/D4D03AQHwPUFOTdP8Zw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670261006475?e=1762992000&v=beta&t=nHIG9RaAVENTLG9aRM2_IDuvejGuoWKFQC4jj69DED8",
+      img: RanjithAntony,
     },
     {
       name: "Mr. Sanjay Kumar",
       role: "Founder Of NearBook Seen On Shark Tank S04 l JoshTalks",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQHxjMOnYOXoeQ/profile-displayphoto-crop_800_800/B56Zmo5YoIG0AI-/0/1759475241264?e=1762992000&v=beta&t=XkRxjhCPAoE0BsEeGD0Mj-tWdLMHeQmk88GnTNxI1r0",
+      img: SanjayKumar,
     },
     {
       name: "Mr. Safwan C P",
       role: "Cofounder @ Rail rolls",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQFqo2pgC7_-Bw/profile-displayphoto-scale_400_400/B56ZgCgFZcHQAg-/0/1752388623646?e=1762992000&v=beta&t=hNSLSZRMo9_BmEuNPxRrsb3frAyqi7PCGSMpJPeM4ZU",
+      img: SafawanCP,
     },
     {
       name: "Mr. Abid Aboobaker",
       role: "Building Scoop // formerly @ Truecaller, ZestMoney & Chillr",
-      img: "https://media.licdn.com/dms/image/v2/D4D03AQGDdHwRolNrhA/profile-displayphoto-scale_400_400/B4DZnERTWyGwAg-/0/1759934504647?e=1762992000&v=beta&t=mLlIWa8hq4MmgWeRY_JqexvmfiM2nLyTmD0OrwB7NbU",
+      img: AbidAboobaker,
     },
     {
       name: "Ms. Aina Raj",
       role: "Founder & Director UDAN Founder & Senior Career Coach Tmindscoaching.com Leadership Coach | Entrepreneur | CEO Coach | Speaker | Corporate Trainer",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQGYXT8aMrjdXw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728913716373?e=1762992000&v=beta&t=S7IowoEr5uoNHYw7rsdwAWJ-sHNUDyTQ6lwEU0hTSAc",
+      img: AinaRaj,
     },
     {
       name: "Mr. Shabas N C",
       role: "Co founder @ fulva",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQH2SoJfCZcKYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1713471100914?e=1762992000&v=beta&t=is7uUefWfp1RBo1VvXAmgFYuQjxlr662tzbTh-5_Mjw",
+      img: ShabasNC,
     },
     {
       name: "Mr. Rahul Gudise",
       role: "CEO & Co-Founder Gale YC W25",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQEjV03jHAjz8g/profile-displayphoto-scale_400_400/B56ZeE5VbzHQAg-/0/1750281312528?e=1762992000&v=beta&t=7lDpFt6-yNnVAbfQdPpal9IDf1oFyKjzHvt8Vp64hZ4",
+      img: RahulGudise,
     },
     {
       name: "Mr. Salman Faariz",
       role: "Marketing Consultant Wagner High-Quality Lubricants Co-Founder MakeMyPass Chief Executive Officer Salooms Inc Co-Founder The Parent Company ",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQEcph8fvNSQEQ/profile-displayphoto-shrink_400_400/B56ZhdFk3IHcAk-/0/1753908401165?e=1762992000&v=beta&t=dfhq8ADl7HdO9d4y5USoHDBowg-Mh1s9SwKJDHxh8t4",
+      img: SalmanFaariz,
     },
     {
       name: "Mr. Nikesh Jain",
       role: "Co-Founder | CEO Edurigo Technologies Vice President/Head of Engineering, India - Conga",
-      img: "https://media.licdn.com/dms/image/v2/C4D03AQG-OT5jqAcKqA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1612893237783?e=1762992000&v=beta&t=iEI1d2FL0Xb7ccRKT9d46dcXMiP2Lj7USfV_vvgW6YE",
+      img: NikeshJain,
     },
     {
       name: "Mr. Suraj Juneja",
       role: "Director Karshin Simulators Pvt. Ltd. (MetaDrive) Founder Freeflow Ventures Pvt Ltd Founder and Chief Ideator Freeflow Venture Builders Founder and Managing Director Exhibit Media Pvt.Ltd Director Elektrogears Pvt.Ltd Founder and Director MasterMentors Founder and Managing Director Level Nine Media Pvt.Ltd",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQHB2GaWc1HtYQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695876389184?e=1762992000&v=beta&t=eRUBKHWW9RJIKx9VlR3B7s4mvATgWon1awGPRcSGNzk",
+      img: SurajJuneja,
     },
     {
       name: "Mr. Shashank Murali",
       role: "Chief Growth Officer Airlearn CEO Relevel by Unacademy Co-founder & CEO TapChief Co-founder & CEO Edvice",
-      img: "https://media.licdn.com/dms/image/v2/C5103AQEAe_2DT098LQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516648227240?e=1762992000&v=beta&t=efzIArIJg5JR-zbqn2rLXrmiIayQWDObAmOUJBGHUhA",
+      img: ShashankMurali,
     },
     {
       name: "Mr. Sreerag A R",
       role: "Ceo @ fabus frames",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQHgaOCFjCLhJw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1687766324454?e=1762992000&v=beta&t=DripLY01gBWKTK7cRx6N9LvsHXR0NNYCfCOdW60EZzg",
+      img: SreeragAR,
     },
     {
       name: "Mr. Midhun A Kunj",
       role: "Founder & CEO Vowels 9M Healthcare Private Limited Founder & CEO Vowels Advanced School of Learning and Research Private Limited Founder & CEO Vowels LifeSciences Private Limited Member TiE Bangalore & Kerala",
-      img: "https://media.licdn.com/dms/image/v2/C5603AQEVOLk9_vw9_A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1627736875171?e=1762992000&v=beta&t=slj7yFnwDi4kEChKG-71YfMqzW1r4yNHft5EQYh6n9M",
+      img: MidhunAKunj,
     },
     {
       name: "Ms. Nikkitha Shanker",
       role: "Co-founder & CEO SuperBryn Co-founder Shoppre.com  Co-Founder & CEO InditrunkMentor Mentor EWA Catalyst Council",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQGvYXO048XAQQ/profile-displayphoto-shrink_400_400/B56ZO7NZ_mGsAk-/0/1734012675304?e=1762992000&v=beta&t=9rbqRw_fXtGzZaNAegZhEG4rNNCj-aYRvQxSf12odYw",
+      img: NikkithaShanker,
     },
     {
       name: "Mr. Ishan Mohammed",
       role: "Founder at Katha - Audible Good News",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQEDI8yq6zNzyw/profile-displayphoto-scale_400_400/B56ZjRs0oSG0Ag-/0/1755864846161?e=1762992000&v=beta&t=UbPlFjTBDuJc9zJXlqc_UAorveHq8fm53qFuvn-9rqk",
+      img: IshanMohammed,
     },
     {
       name: "Mr. Vaseem Raj",
       role: "Co founder TADA Co-Founder Araigen Innovations",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQEhw6ApeWn0_A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721643704576?e=1762992000&v=beta&t=3d6oGcooI95Ry3CkRXAtdldznWzbI2P_t_glFDzPeU0",
+      img: VaseemRaj,
     },
     {
       name: "Mr. Shibin K",
       role: "CEO & Co-founder, Rail Rolls",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQF8GgEhcxsdIA/profile-displayphoto-scale_400_400/B56Zisgn4CH0Ag-/0/1755240900242?e=1762992000&v=beta&t=Ix1hVpZiyrTJPaXX7ooyisNMYtmtA66VsgDO5v7whxQ",
+      img: ShibinK,
     },
     {
       name: "Mr. Ramees Ali",
       role: "Founder Stealth AI Edtech Co-Founder Interval Learning Founder Stealth Startup",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQGR7LL1ASJGtw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1707658547145?e=1762992000&v=beta&t=Cf7KIfClcU53FkjfgukM97Y_0pz2Ehx4P9yKd2fk-NE",
+      img: RameesAli,
     },
     {
       name: "Mr. Rizwan Ramzan Ahamed",
       role: "Co-founder & CEO HACA Co-Founder Stealth Founder ConnecTree Founder RizMango",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQGyl6ak4QXWPw/profile-displayphoto-scale_400_400/B56ZjL5IDLHcAo-/0/1755767407868?e=1762992000&v=beta&t=gEKUdn_E4M5X4bXBgMFucCdVOnkUurlQJuu4668kdDE",
+      img: RizwanRamzanAhamed,
     },
     {
       name: "Mr. Cyriac T Meppuram",
       role: "Serial Entrepreneur | Founder, The Wellness Junxion",
-      img: "https://media.licdn.com/dms/image/v2/D5603AQG9OmxAmRQVuw/profile-displayphoto-shrink_400_400/B56Za9XtGuGsAk-/0/1746933830940?e=1762992000&v=beta&t=SZyIavQ36iGL3N1-h2mpDFIyTijyJmd5WUQgMNZeP9Y",
+      img: CyriacTMeppuram,
     },
     {
       name: "Mr. Niyas Muhammed",
       role: "General Manager at Innerspace Coworking",
-      img: "https://media.licdn.com/dms/image/v2/C5103AQEZxMc8-WwHkA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1535565583886?e=1762992000&v=beta&t=WWjTHZBzKx_2cPOVsms1Ga-BDSFG63SDqV7uh1GA43Q",
+      img: NiyasMuhammed,
     },
   ];
 
